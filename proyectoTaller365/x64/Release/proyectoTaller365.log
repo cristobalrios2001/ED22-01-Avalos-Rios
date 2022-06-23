@@ -1,12 +1,1 @@
-﻿  Detector.cpp
-  Linked.cpp
-  main.cpp
-  Nodo.cpp
-  Persona.cpp
-C:\Users\crist\source\repos\proyectoTaller365\Persona.cpp(12,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\crist\source\repos\proyectoTaller365\Persona.cpp(13,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Generando código
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-  All 215 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Generación de código finalizada
-  proyectoTaller365.vcxproj -> C:\Users\crist\source\repos\proyectoTaller365\x64\Release\proyectoTaller365.exe
+﻿  proyectoTaller365.vcxproj -> C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\x64\Release\proyectoTaller365.exe

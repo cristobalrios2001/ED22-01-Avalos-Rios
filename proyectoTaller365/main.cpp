@@ -26,19 +26,36 @@ int main(int argc, char** argv)
     cout << detector.modeName() << endl;
 
     vector<Persona> found = detector.detect(imagen);
+    int contadorEntrada = 0;
+    int contadorSalida = 0;
     for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
     {
         Persona& p = *i;
         cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl;
         //detector.adjustRect(r);
-        rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 255, 0), 2);
-        circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);
+        rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
+        circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
         circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
         circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+        if (p.getXCentro() > 175) {
+            contadorEntrada++;
+        }
+        else {
+            contadorSalida++;
+        }
+        //cout << "El centroide de la persona es : " << p.getXCentro() << "y " << p.getYCentro() << endl;
     }
-
+    Point p1(175, 0), p2(175, 300);//Linea
+    int time = 1;
+    line(imagen, p1, p2, Scalar(255, 0,0), time, LINE_8);
     imshow("People detector", imagen);
+    cout << "Entraron: "<<contadorEntrada<<endl;
+    cout << "Salieron: " << contadorSalida<<endl;
     waitKey(0);
+    
+   //circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 255, 0), 3);
 
     return 0;
+
+    
 }

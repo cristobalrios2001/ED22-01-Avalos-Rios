@@ -43,7 +43,6 @@ int main(int argc, char** argv)
         else {
             contadorSalida++;
         }
-        //cout << "El centroide de la persona es : " << p.getXCentro() << "y " << p.getYCentro() << endl;
     }
     Point p1(175, 0), p2(175, 300);//Linea
     int time = 1;
@@ -51,6 +50,10 @@ int main(int argc, char** argv)
     imshow("People detector", imagen);
     cout << "Entraron: "<<contadorEntrada<<endl;
     cout << "Salieron: " << contadorSalida<<endl;
+    float veloEntra = (float) contadorEntrada / 3600;
+    float veloSalida = (float)contadorSalida / 3600;
+    cout << "La velocidad de las personas que entran son :" << veloEntra<<" segundos" << endl;
+    cout << "La velocidad de las persona que salen: " << veloSalida<< " segundos" << endl;
     waitKey(0);
     
    //circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 255, 0), 3);

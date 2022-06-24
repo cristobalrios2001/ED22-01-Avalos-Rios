@@ -13,12 +13,14 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <ctime>
+#include <cstdlib>
 using namespace cv;
 using namespace std;
 
 int main(int argc, char** argv)
 {
-
+ 
     Detector detector;
     Mat imagen;
     imagen = imread("images/image0292.png");
@@ -55,8 +57,9 @@ int main(int argc, char** argv)
     cout << "La velocidad de las personas que entran son :" << veloEntra<<" segundos" << endl;
     cout << "La velocidad de las persona que salen: " << veloSalida<< " segundos" << endl;
     waitKey(0);
-    
-   //circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 255, 0), 3);
+    //srand((unsigned)time(0));
+    //cout << rand() << endl;
+   
 
     return 0;
 

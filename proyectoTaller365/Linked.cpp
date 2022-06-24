@@ -2,18 +2,16 @@
 #include "Persona.h"
 #include "Linked.h"
 
-
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-Linked::Linked() {
+Linked:: Linked() {
     header = NULL;
 }
 void Linked::addNodo(Persona persona) {
-    Nodo* nodo = new Nodo();
-    nodo->setPersona(persona);
+    Nodo* nodo = new Nodo(persona);
     nodo->setNext(NULL);
     if (header == NULL) {
         header = nodo;
@@ -36,14 +34,13 @@ int Linked::getSize() {
     return cont;
 }
 void Linked::show() {
-    Nodo* aux = header;
     if (header == NULL) {
         cout << "Lista Vacia" << endl;
     }
     else {
-        while (aux != NULL) {
-            cout << aux->getPersona().getID() << endl;
-            aux = aux->getNext();
+        while (header != NULL) {
+            cout << header->getPersona().getID() << endl;
+            header = header->getNext();
         }
     }
 }

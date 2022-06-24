@@ -3,13 +3,13 @@
 #define NODO_H
 
 #include "Persona.h"
+#include "Linked.h"
 
 class Nodo {
     Persona persona;
     Nodo* next;
 
 public:
-    Nodo();
     Nodo(Persona persona);
     void setNext(Nodo* nodo);
     Nodo* getNext();

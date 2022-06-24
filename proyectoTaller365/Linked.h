@@ -1,4 +1,6 @@
 #pragma once
+#ifndef LINKED_H
+#define LINKED_H
 #include "Nodo.h"
 #include "Persona.h"
 
@@ -7,12 +9,13 @@
 using namespace std;
 
 class Linked {
-private:
 	Nodo* header;
 public:
 	Linked();
 	void addNodo(Persona persona);
 	int getSize();
 	void show();
+	~Linked();
 
 };
+#endif

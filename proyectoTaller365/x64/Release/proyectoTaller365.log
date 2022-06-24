@@ -1,7 +1,22 @@
-﻿  main.cpp
-  Generando código
-  0 of 16 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
-  proyectoTaller365.vcxproj -> C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\x64\Release\proyectoTaller365.exe
+﻿  Linked.cpp
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,14): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(11,5): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(16,9): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(17,9): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(20,25): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(28,17): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(37,9): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(41,16): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(42,21): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(43,13): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(43,22): error C2065: 'header': identificador no declarado
+  main.cpp
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,14): error C2238: símbolos (token) inesperados delante de ';'
+  Nodo.cpp
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,14): error C2238: símbolos (token) inesperados delante de ';'

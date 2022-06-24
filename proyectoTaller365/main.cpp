@@ -5,6 +5,7 @@
 #include "Detector.h"
 #include "Persona.h"
 #include "Nodo.h"
+#include "Linked.h"
 
 #include <opencv2/objdetect.hpp>
 #include <opencv2/highgui.hpp>
@@ -19,8 +20,12 @@
 using namespace cv;
 using namespace std;
 
+
 int main(int argc, char** argv)
 {
+    Linked *listaEntrada = new Linked();
+    Linked *listaSalida = new Linked();
+    /*
     Detector detector;
     Mat imagen;
     imagen = imread("images/image0292.png");
@@ -57,7 +62,13 @@ int main(int argc, char** argv)
     cout << "La velocidad de las personas que entran son :" << veloEntra<<" segundos" << endl;
     cout << "La velocidad de las persona que salen: " << veloSalida<< " segundos" << endl;
     waitKey(0);
-    
+    */
+    Persona* p = new Persona();
+    Nodo* n = new Nodo(*p);
+    listaEntrada->addNodo(*p);
+    listaEntrada->show();
+    cout << p->getID();
+
    
 
     return 0;

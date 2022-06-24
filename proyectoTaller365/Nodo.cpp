@@ -1,14 +1,9 @@
 #include "Nodo.h"
 #include "Persona.h"
+#include "Linked.h"
 
-Nodo::Nodo() {
-    Nodo* nodo = new Nodo();
-
-}
-
-Nodo::Nodo(Persona persona) {
-    Nodo* n = new Nodo();
-    n->persona = persona;
+ Nodo::Nodo(Persona persona) {
+    this->persona = persona;
 
 }
 void Nodo::setNext(Nodo* nodo) {
@@ -20,10 +15,8 @@ Nodo* Nodo::getNext() {
 Persona Nodo::getPersona() {
     return this->persona;
 }
-Nodo :: ~Nodo() {
-
-}
-
 void Nodo::setPersona(Persona persona) {
     this->persona = persona;
+}
+Nodo :: ~Nodo() {
 }

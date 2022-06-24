@@ -10,6 +10,7 @@ class Nodo {
     Nodo* next;
 
 public:
+    Nodo();
     Nodo(Persona persona);
     void setNext(Nodo* nodo);
     Nodo* getNext();

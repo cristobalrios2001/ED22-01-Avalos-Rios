@@ -2,10 +2,13 @@
 #include "Persona.h"
 #include "Linked.h"
 
- Nodo::Nodo(Persona persona) {
-    this->persona = persona;
-
+ Nodo::Nodo() {
+     next = NULL;
 }
+ Nodo::Nodo(Persona persona) {
+     this->persona = persona;
+     this->next = NULL;
+ }
 void Nodo::setNext(Nodo* nodo) {
     this->next = nodo;
 }

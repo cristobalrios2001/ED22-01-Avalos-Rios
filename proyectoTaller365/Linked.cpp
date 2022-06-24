@@ -11,8 +11,8 @@ Linked:: Linked() {
     header = NULL;
 }
 void Linked::addNodo(Persona persona) {
-    Nodo* nodo = new Nodo(persona);
-    nodo->setNext(NULL);
+    Nodo* nodo = new Nodo();
+    nodo->setPersona(persona);
     if (header == NULL) {
         header = nodo;
     }
@@ -38,6 +38,7 @@ void Linked::show() {
         cout << "Lista Vacia" << endl;
     }
     else {
+        Nodo* temp = header;
         while (header != NULL) {
             cout << header->getPersona().getID() << endl;
             header = header->getNext();

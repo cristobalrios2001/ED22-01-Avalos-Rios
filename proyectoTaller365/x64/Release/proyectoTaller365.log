@@ -8,10 +8,11 @@ C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.c
 C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(20,25): error C2065: 'header': identificador no declarado
 C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(28,17): error C2065: 'header': identificador no declarado
 C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(37,9): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(41,16): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(42,21): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(43,13): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(43,22): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(41,22): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(42,16): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(43,21): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(44,13): error C2065: 'header': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(44,22): error C2065: 'header': identificador no declarado
   main.cpp
 C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C2143: error de sintaxis: falta ';' delante de '*'
 C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int

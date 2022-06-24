@@ -4,6 +4,7 @@
 
 #include "Detector.h"
 #include "Persona.h"
+#include "Nodo.h"
 
 #include <opencv2/objdetect.hpp>
 #include <opencv2/highgui.hpp>
@@ -20,7 +21,6 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
- 
     Detector detector;
     Mat imagen;
     imagen = imread("images/image0292.png");
@@ -57,8 +57,7 @@ int main(int argc, char** argv)
     cout << "La velocidad de las personas que entran son :" << veloEntra<<" segundos" << endl;
     cout << "La velocidad de las persona que salen: " << veloSalida<< " segundos" << endl;
     waitKey(0);
-    //srand((unsigned)time(0));
-    //cout << rand() << endl;
+    
    
 
     return 0;

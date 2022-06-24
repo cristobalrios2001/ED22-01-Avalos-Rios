@@ -1,5 +1,6 @@
 #include "Nodo.h"
 #include "Persona.h"
+#include "Linked.h"
 
 
 #include <iostream>
@@ -7,50 +8,42 @@
 
 using namespace std;
 
-class LinkedList {
-private:
-    Nodo* first;
-public:
-    LinkedList() {
-        first = NULL;
+Linked::Linked() {
+    header = NULL;
+}
+void Linked::addNodo(Persona persona) {
+    Nodo* nodo = new Nodo();
+    nodo->setPersona(persona);
+    nodo->setNext(NULL);
+    if (header == NULL) {
+        header = nodo;
     }
-    void addNode(Persona persona) {
-        Nodo* nodo = new Nodo();
-        nodo->setPersona(persona);
-        nodo->setNext(NULL);
-        if (this->first == NULL) {
-            this->first = nodo;
+    else {
+        Nodo* current = header;
+        while (current->getNext() != NULL) {
+            current = current->getNext();
         }
-        else {
-            Nodo* current = this->first;
-            while (current->getNext() != NULL) {
-                current = current->getNext();
-            }
-            current->setNext(nodo);
-        }
+        current->setNext(nodo);
     }
-    int getSize() {
-        Nodo* aux = this->first;
-        int cont = 0;
-        while (aux->getNext() != NULL) {
-            cont++;
+}
+int Linked::getSize() {
+    Nodo* aux = header;
+    int cont = 0;
+    while (aux->getNext() != NULL) {
+        cont++;
+        aux = aux->getNext();
+    }
+    return cont;
+}
+void Linked::show() {
+    Nodo* aux = header;
+    if (header == NULL) {
+        cout << "Lista Vacia" << endl;
+    }
+    else {
+        while (aux != NULL) {
+            cout << aux->getPersona().getID() << endl;
             aux = aux->getNext();
         }
-        return cont; 
     }
-
-    void show() {
-        Nodo* aux = this->first;
-        if (this->first == NULL) {
-            cout << "Lista Vacia" << endl;
-        }
-        else {
-            while (aux != NULL) {
-               // cout << aux->getPersona() << endl; variable
-                aux = aux->getNext();
-            }
-        }
-    }
-
-
-};
+}

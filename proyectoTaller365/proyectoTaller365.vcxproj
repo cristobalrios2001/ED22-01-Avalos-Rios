@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Detector.h" />
+    <ClInclude Include="Linked.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="Persona.h" />
   </ItemGroup>

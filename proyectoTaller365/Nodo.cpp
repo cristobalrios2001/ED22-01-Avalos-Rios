@@ -1,13 +1,11 @@
-#include "Nodo.h"
-#include "Persona.h"
-#include "Linked.h"
+#include "Nodo.hpp"
 
  Nodo::Nodo() {
-     next = NULL;
+     next = nullptr;
 }
  Nodo::Nodo(Persona persona) {
      this->persona = persona;
-     this->next = NULL;
+     this->next = nullptr;
  }
 void Nodo::setNext(Nodo* nodo) {
     this->next = nodo;

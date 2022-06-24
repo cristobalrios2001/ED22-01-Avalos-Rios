@@ -1,47 +1,44 @@
-#include "Nodo.h"
-#include "Persona.h"
-#include "Linked.h"
+#include "Linked.hpp"
 
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-Linked:: Linked() {
-    header = NULL;
+Linked::Linked() {
+	this->header = nullptr;
 }
 void Linked::addNodo(Persona persona) {
-    Nodo* nodo = new Nodo();
-    nodo->setPersona(persona);
-    if (header == NULL) {
-        header = nodo;
-    }
-    else {
-        Nodo* current = header;
-        while (current->getNext() != NULL) {
-            current = current->getNext();
-        }
-        current->setNext(nodo);
-    }
+	Nodo* nodo = new Nodo();
+	nodo->setPersona(persona);
+	if (this->header == nullptr) {
+		this->header = nodo;
+	}
+	else {
+		Nodo* current = this->header;
+		while (current->getNext() != nullptr) {
+			current = current->getNext();
+		}
+		current->setNext(nodo);
+	}
 }
 int Linked::getSize() {
-    Nodo* aux = header;
-    int cont = 0;
-    while (aux->getNext() != NULL) {
-        cont++;
-        aux = aux->getNext();
-    }
-    return cont;
+	Nodo* aux = this->header;
+	int cont = 0;
+	while (aux->getNext() != nullptr) {
+		cont++;
+		aux = aux->getNext();
+	}
+	return cont;
 }
 void Linked::show() {
-    if (header == NULL) {
-        cout << "Lista Vacia" << endl;
-    }
-    else {
-        Nodo* temp = header;
-        while (header != NULL) {
-            cout << header->getPersona().getID() << endl;
-            header = header->getNext();
-        }
-    }
+	if (this->header == NULL) {
+		cout << " Lista vacia" << endl;
+	}
+	else {
+		Nodo* temp = this->header;
+		while (temp != NULL) {
+			cout << temp->getPersona().getID() << endl;
+			temp = temp->getNext();
+		}
+	}
+}
+
+Linked ::~Linked() {
+
 }

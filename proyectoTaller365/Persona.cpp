@@ -1,4 +1,4 @@
-#include "Persona.h"
+#include "Persona.hpp"
 #include <ctime>
 #include <cstdlib>
 

@@ -2,10 +2,10 @@
 // It is subject to the license terms in the LICENSE file found in the top-level directory
 // of this distribution and at http://opencv.org/license.html
 
-#include "Detector.h"
-#include "Persona.h"
-#include "Nodo.h"
-#include "Linked.h"
+#include "Detector.hpp"
+#include "Persona.hpp"
+#include "Nodo.hpp"
+#include "Linked.hpp"
 
 #include <opencv2/objdetect.hpp>
 #include <opencv2/highgui.hpp>

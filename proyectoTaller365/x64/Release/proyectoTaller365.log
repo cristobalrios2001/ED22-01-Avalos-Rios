@@ -1,23 +1,10 @@
-﻿  Linked.cpp
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,14): error C2238: símbolos (token) inesperados delante de ';'
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(11,5): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(16,9): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(17,9): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(20,25): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(28,17): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(37,9): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(41,22): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(42,16): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(43,21): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(44,13): error C2065: 'header': identificador no declarado
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.cpp(44,22): error C2065: 'header': identificador no declarado
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: El directorio intermedio (x64\Release\) contiene archivos compartidos de otro proyecto (proyectoTaller365.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Linked.cpp
   main.cpp
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,14): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,24): error C2238: símbolos (token) inesperados delante de ';'
   Nodo.cpp
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.h(12,14): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C2143: error de sintaxis: falta ';' delante de '*'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,24): error C2238: símbolos (token) inesperados delante de ';'

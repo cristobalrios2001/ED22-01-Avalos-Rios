@@ -1,10 +1,10 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: El directorio intermedio (x64\Release\) contiene archivos compartidos de otro proyecto (proyectoTaller365.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  Detector.cpp
   Linked.cpp
   Nodo.cpp
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,15): error C2238: símbolos (token) inesperados delante de ';'
+  Persona.cpp
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Persona.cpp(15,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Persona.cpp(16,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   main.cpp
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C2143: error de sintaxis: falta ';' delante de '*'
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\Linked.hpp(13,15): error C2238: símbolos (token) inesperados delante de ';'
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\main.cpp(69,5): error C2065: 'listaEntrada': identificador no declarado
+C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\main.cpp(70,5): error C2065: 'listaEntrada': identificador no declarado

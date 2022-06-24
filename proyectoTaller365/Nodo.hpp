@@ -3,7 +3,6 @@
 #define NODO_H
 
 #include "Persona.hpp"
-#include "Linked.hpp"
 
 class Nodo {
     Persona persona;

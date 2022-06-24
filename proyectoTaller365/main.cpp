@@ -17,14 +17,15 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
+#include <math.h>
 using namespace cv;
 using namespace std;
 
 
 int main(int argc, char** argv)
 {
-    Linked *listaEntrada = new Linked();
-    Linked *listaSalida = new Linked();
+    //Linked *listaEntrada = new Linked();
+   // Linked *listaSalida = new Linked();
     
     Detector detector;
     Mat imagen;
@@ -62,13 +63,13 @@ int main(int argc, char** argv)
     cout << "La velocidad de las personas que entran son :" << veloEntra<<" segundos" << endl;
     cout << "La velocidad de las persona que salen: " << veloSalida<< " segundos" << endl;
     waitKey(0);
-    
+    /*
     Persona* p = new Persona();
     Nodo* n = new Nodo();
     listaEntrada->addNodo(*p);
     listaEntrada->show();
     cout << p->getID();
-
+    */
    
 
     return 0;

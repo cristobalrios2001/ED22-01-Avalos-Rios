@@ -10,7 +10,7 @@ using namespace std;
 
 class Linked {
 private:
-	Nodo* header = nullptr;
+	Nodo* header;
 	int size = 0;
 public:
 	Linked();

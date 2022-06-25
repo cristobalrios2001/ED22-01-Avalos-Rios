@@ -40,3 +40,9 @@ int Persona::getYCentro() {
 int Persona :: getID() {
     return id;
 }
+void Persona::setXCentro(int x) {
+    this->xCentro = x;
+}
+void Persona::setYCentro(int y) {
+    this->yCentro = y;
+}

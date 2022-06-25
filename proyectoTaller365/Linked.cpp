@@ -20,7 +20,7 @@ void Linked::addNodo(Persona persona) {
 int Linked::getSize() {
 	Nodo* aux = this->header;
 	int cont = 0;
-	while (aux->getNext() != nullptr) {
+	while (aux != nullptr) {
 		cont++;
 		aux = aux->getNext();
 	}
@@ -37,6 +37,17 @@ void Linked::show() {
 			temp = temp->getNext();
 		}
 	}
+}
+Persona Linked::getI(int i) {
+	Nodo* p = this->header;
+	while (p != nullptr) {
+		if (i == 0) {
+			return p->getPersona();
+		}
+		i -= 1;
+		p = p->getNext();
+	}
+
 }
 
 Linked ::~Linked() {

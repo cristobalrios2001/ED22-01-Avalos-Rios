@@ -17,6 +17,7 @@ public:
 	void addNodo(Persona persona);
 	int getSize();
 	void show();
+	Persona getI(int i);
 	~Linked();
 };
 #endif

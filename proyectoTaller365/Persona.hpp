@@ -30,6 +30,8 @@ public:
     int getXCentro();
     int getYCentro();
     int getID();
+    void setXCentro(int x);
+    void setYCentro(int y);
 };
 
 #endif

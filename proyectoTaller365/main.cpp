@@ -62,7 +62,7 @@ int main(int argc, char** argv)
 
         for (int i = 0; i < listaEntrada->getSize(); i++) {
             Persona personaI = listaEntrada->getI(i);
-            double distancia = calcularDistancia(personaI, p.getXCentro(), p.getYCentro());
+            double distancia = calcularDistancia(personaI, p.getXCentro(), p.getYCentro());//esta comparando la misma persona
             if (distancia < 0.1) { //ver distancia
                 personaI.setXCentro(p.getXCentro());
                 personaI.setYCentro(p.getYCentro());
@@ -96,20 +96,7 @@ int main(int argc, char** argv)
     cout << "La velocidad de las personas que entran son :" << veloEntra << " segundos" << endl;
     cout << "La velocidad de las persona que salen: " << veloSalida << " segundos" << endl;
     waitKey(0);
-
-
-    /*
-    Persona* p = new Persona();
-    Nodo* n = new Nodo();
-    listaEntrada->addNodo(*p);
-    listaEntrada->show();
-    //listaEntrada->getSize();
-    cout <<listaEntrada->getSize()<<endl;
-
-    listaEntrada->~Linked();
-    */
-    return 0;
-
+    
     return 0;
 
     

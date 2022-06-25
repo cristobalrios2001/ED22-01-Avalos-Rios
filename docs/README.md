@@ -161,8 +161,11 @@ tiene un identificado personal.
 
 # Referecia
 
-Indicar los libros, páginas web, documentos, etc. Utilizados en el trabajo. Por ejemplo:
+Fusia, C., Quiroa, L., Silva, S., Wolukanis, F. V., Boulabiar, I., Babu, S., Alexandrou, F., & Chedella, P. (2021, 16 julio). Code OpenCV in Visual Studio. LearnOpenCV – OpenCV, PyTorch, Keras, Tensorflow Examples and Tutorials. https://learnopencv.com/code-opencv-in-visual-studio/
 
 
 
 ## 4. Conclusiones
+Respecto al trabajo realizado anteriormente se puede destacar que uno de los puntos claves en el desarrollo del proyecto fue el cambio de ID, debido a que en un principio empezamos usando Visual Studio Code, lo cual nos genero muchos problemas desde un inicio provocando que el tiempo de trabajo se convirtiera en tiempo de ajustes de ID, la solución frente a este problema fue cambiarnos de ID a Visual Studio Manager 2022 lo cual nos ayudo mucho con los ajustes indicados vistos en videos de la asignatura.Con este hecho logramos compilar el programa de forma correcta y pudiendo avanzar en el código.Respecto a nuestros avances fueron muy equitativos por ambas partes lo cual nos ayudo a poder recuperar el tiempo perdido anteriormente. Junto con esto durante el desarrollo del proyecto se realizaron distintas investigaciones que nos ayudaron a entender más el lenguaje a trabajar en este caso C++. Por otra parte  los resultados que obtuvimos gran parte de lo que esperabamos ya que obtuvimos la imagen con el 
+cuadrado de la persona en color rojo, ademas de las historias de usuario como los contadores de personas, el flujo de estas y el almacenamiento para el manejo de 
+esta información

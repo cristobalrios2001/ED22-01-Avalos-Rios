@@ -21,7 +21,7 @@
  hicimos uso de las librerías que nos permiten usar los archivos que reconocen las personas y sus distintas herramientas. Una vez que obtuvimos todo lo necesario hicimos el código a partir de
  lo aprendido en los videos y obtuvimos las imágenes de los archivos que el profesor Juan Bekios nos facilito para hacer pruebas las cuales resultaron con éxito.>
 
-<Colocar alguna imágen en la portada>
+![Resultado Final](/docs/images/Imagen1.png)
 
 ### Documentos
 

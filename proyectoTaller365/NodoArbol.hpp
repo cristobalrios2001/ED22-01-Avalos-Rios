@@ -2,12 +2,10 @@
 #include <math.h>
 
 class NodoArbol{
-private:
+public:
 	float centroide;
 	NodoArbol* izq;
 	NodoArbol* der;
-
-public:
 	~NodoArbol();
 
 };

@@ -103,7 +103,14 @@ int main(int argc, char** argv)
 
     waitKey(0);
     
-    return 0;
-
-    
+    return 0; 
+}
+void menu() {
+    cout << "Bienvenido a las historias de usuario " << endl;
+    cout << "Ingrese la opcion que desea realizar: ";
+    cout << "1) Detectar a las personas" << endl;
+    cout << "2)Cantidad de personas que han entrado" << endl;
+    cout << "3)Cantidad de personas que han salido" << endl;
+    cout << "4)Velocidad de las personas que han entrado" << endl;
+    cout << "5)Velocidad de las personas que han salido" << endl;
 }

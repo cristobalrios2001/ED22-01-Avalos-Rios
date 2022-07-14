@@ -3,7 +3,7 @@
 
 class NodoArbol{
 public:
-	float centroide;
+	int centroide;
 	NodoArbol* izq;
 	NodoArbol* der;
 	~NodoArbol();

@@ -6,6 +6,7 @@
 #include "Persona.hpp"
 #include "Nodo.hpp"
 #include "Linked.hpp"
+#include "BinaryTree.hpp"
 
 #include <opencv2/objdetect.hpp>
 #include <opencv2/highgui.hpp>
@@ -21,15 +22,6 @@
 using namespace cv;
 using namespace std;
 
-struct nodoArbol {
-    float dato;
-    nodoArbol* der;
-    nodoArbol* izq;
-};
-typedef struct nodoArbol nodo;
-
-
-
 double calcularDistancia(Persona p, int distX, int distY) {
     int distPX = p.getXCentro();
     int distPY = p.getXCentro();
@@ -40,6 +32,7 @@ double calcularDistancia(Persona p, int distX, int distY) {
 
 int main(int argc, char** argv)
 {
+    //BinaryTree arbol;
     Linked* listaEntrada = new Linked();
     Linked* listaSalida = new Linked();
 
@@ -48,7 +41,7 @@ int main(int argc, char** argv)
     imagen = imread("images/image0292.png");
     detector.toggleMode();
     cout << detector.modeName() << endl;
-
+    //arbol.insertar(175);
     vector<Persona> found = detector.detect(imagen);
     int contadorEntrada = 0;
     int contadorSalida = 0;
@@ -56,6 +49,7 @@ int main(int argc, char** argv)
     {
         Persona& p = *i;
         if (p.getXCentro() > 175) {
+            //arbol.insertar(p.getXCentro);
             listaEntrada->addNodo(p); // Personas Entrando
         }
         else {
@@ -68,7 +62,7 @@ int main(int argc, char** argv)
         circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
         circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
         circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
-
+        /*
         for (int i = 0; i < listaEntrada->getSize(); i++) {
             Persona personaI = listaEntrada->getI(i);
             double distancia = calcularDistancia(personaI, p.getXCentro(), p.getYCentro());//esta comparando la misma persona
@@ -84,9 +78,7 @@ int main(int argc, char** argv)
                 personaI.setXCentro(p.getXCentro());
                 personaI.setYCentro(p.getYCentro());
             }
-        }
-
-
+        }*/
         if (p.getXCentro() > 175) {
             contadorEntrada++;
         }
@@ -103,7 +95,7 @@ int main(int argc, char** argv)
 
     cout << "Entraron: " << contadorEntrada << endl;
     cout << "Salieron: " << contadorSalida << endl;
-
+    
     float veloEntra = (float)contadorEntrada / 3600;
     float veloSalida = (float)contadorSalida / 3600;
 
@@ -114,9 +106,7 @@ int main(int argc, char** argv)
     
     return 0; 
 }
-
-
-
+/*
 void menu() {
     cout << "Bienvenido a las historias de usuario " << endl;
     cout << "Ingrese la opcion que desea realizar: ";
@@ -125,4 +115,4 @@ void menu() {
     cout << "3)Cantidad de personas que han salido" << endl;
     cout << "4)Velocidad de las personas que han entrado" << endl;
     cout << "5)Velocidad de las personas que han salido" << endl;
-}
+}*/

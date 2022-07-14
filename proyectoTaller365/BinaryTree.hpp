@@ -8,12 +8,11 @@ using namespace cv;
 using namespace std;
 
 class BinaryTree {
-private: 
-	struct NodoArbol* raiz;
-	NodoArbol* insertar(NodoArbol*nodo,float centroide);
-	double distancia();
-	void insertar(float centroide);
 public:
+	struct NodoArbol* raiz;
+	NodoArbol* insertar(NodoArbol*nodo,int centroide);
+	//double distancia();
+	void insertar(int centroide);
 	BinaryTree() {
 		raiz = nullptr;
 	}

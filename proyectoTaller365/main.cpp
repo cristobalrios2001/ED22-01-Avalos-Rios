@@ -21,6 +21,15 @@
 using namespace cv;
 using namespace std;
 
+struct nodoArbol {
+    float dato;
+    nodoArbol* der;
+    nodoArbol* izq;
+};
+typedef struct nodoArbol nodo;
+
+
+
 double calcularDistancia(Persona p, int distX, int distY) {
     int distPX = p.getXCentro();
     int distPY = p.getXCentro();
@@ -105,6 +114,9 @@ int main(int argc, char** argv)
     
     return 0; 
 }
+
+
+
 void menu() {
     cout << "Bienvenido a las historias de usuario " << endl;
     cout << "Ingrese la opcion que desea realizar: ";

@@ -138,6 +138,8 @@
     <ClCompile Include="Persona.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryTree.hpp" />
+    <ClInclude Include="NodoArbol.hpp" />
     <ClInclude Include="Detector.hpp" />
     <ClInclude Include="Linked.hpp" />
     <ClInclude Include="Nodo.hpp" />

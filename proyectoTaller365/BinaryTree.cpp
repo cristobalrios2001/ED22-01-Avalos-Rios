@@ -60,20 +60,16 @@ int BinaryTree::cantSalientes() {
 int  BinaryTree::cuentaNodos(struct NodoArbol* nodo, int contador) {
 	if (isLeaf(nodo)) {
 		contador++;
-		//cout<<nodo->dato;printf(":\tsumando hoja, \n");//se puede borrar esta linea
 	}
-	if (nodo->izq != nullptr) {
-		//printf("izq\n");
-		contador = cuentaNodos(nodo->izq, contador);
-		//cout<<nodo->dato;printf(":\tfin izq\n\n");//se puede borrar esta linea
+	if (nodo->izq != nullptr) {		
+		contador = cuentaNodos(nodo->izq, contador);	
 
 	}
 	if (nodo->der != nullptr) {
-		//printf("der\n");
-		contador = cuentaNodos(nodo->der, contador);
-		//cout<<nodo->dato;printf(":\tsumando raiz\n");//se puede borrar esta linea
+		contador = cuentaNodos(nodo->der, contador);		
 		contador++;
 	}
+	return contador;
 }
 
 bool  BinaryTree::isLeaf(NodoArbol* nodo) {

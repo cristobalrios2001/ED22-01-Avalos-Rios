@@ -4,13 +4,7 @@
 
 
 void BinaryTree::insertarNodo(NodoArbol* nodo, int centroide) {
-	if (nodo == nullptr) {
-		nodo = new NodoArbol();
-		nodo->centroide = centroide;
-		nodo->izq = nullptr;
-		nodo->der = nullptr;
-	}
-	else if (centroide < nodo->centroide) {
+	if (centroide < nodo->centroide) {
 		if (nodo->izq == NULL) {
 			nodo->izq = new NodoArbol();
 			nodo->izq->centroide = centroide;

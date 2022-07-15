@@ -19,7 +19,7 @@ public:
 
 	void show(NodoArbol*raiz,int cont);
 	BinaryTree() {
-		raiz = nullptr;
+		raiz = new NodoArbol();
 	}
-	void setRaiz( int centroide);
+	void setRaiz(int centroide);
 };

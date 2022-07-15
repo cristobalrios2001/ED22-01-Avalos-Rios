@@ -44,6 +44,10 @@ int main(int argc, char** argv)
     tiempo = time;*/
 
     BinaryTree arbol;
+    arbol.setRaiz(175);
+    arbol.insertarNodo(arbol.raiz, 150);
+    arbol.insertarNodo(arbol.raiz, 200);
+    arbol.show(arbol.raiz,0);
     /*
     Linked* listaEntrada = new Linked();
     Linked* listaSalida = new Linked();

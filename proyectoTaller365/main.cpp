@@ -7,6 +7,7 @@
 #include "Nodo.hpp"
 #include "Linked.hpp"
 #include "BinaryTree.hpp"
+#include "NodoArbol.hpp"
 
 #include <opencv2/objdetect.hpp>
 #include <opencv2/highgui.hpp>
@@ -32,7 +33,14 @@ double calcularDistancia(Persona p, int distX, int distY) {
 
 int main(int argc, char** argv)
 {
-    //BinaryTree arbol;
+    int cont = 0;
+    BinaryTree arbol;
+    arbol.insertar(175);
+    arbol.insertarNodo(arbol.raiz, 150);
+    arbol.insertarNodo(arbol.raiz, 200);
+    arbol.insertarNodo(arbol.raiz, 160);
+
+    /*
     Linked* listaEntrada = new Linked();
     Linked* listaSalida = new Linked();
 
@@ -61,7 +69,7 @@ int main(int argc, char** argv)
         rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
         circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
         circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
-        circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+        circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2); */
         /*
         for (int i = 0; i < listaEntrada->getSize(); i++) {
             Persona personaI = listaEntrada->getI(i);
@@ -79,6 +87,7 @@ int main(int argc, char** argv)
                 personaI.setYCentro(p.getYCentro());
             }
         }*/
+        /*
         if (p.getXCentro() > 175) {
             contadorEntrada++;
         }
@@ -102,7 +111,7 @@ int main(int argc, char** argv)
     cout << "La velocidad de las personas que entran son :" << veloEntra << " segundos" << endl;
     cout << "La velocidad de las persona que salen: " << veloSalida << " segundos" << endl;
 
-    waitKey(0);
+    waitKey(0); */
     
     return 0; 
 }

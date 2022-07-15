@@ -11,8 +11,11 @@ class BinaryTree {
 
 public:
 	struct NodoArbol* raiz;
-	NodoArbol* insertar(NodoArbol*nodo,int centroide);
 	void insertar(int centroide);
+	void insertarNodo(NodoArbol*nodo,int centroide);
+	void inorden(NodoArbol*nodo);
+	int cantEntrantes();
+	void show(NodoArbol*raiz,int cont);
 	BinaryTree() {
 		raiz = nullptr;
 	}

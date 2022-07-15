@@ -22,4 +22,5 @@ public:
 	BinaryTree() {
 		raiz = nullptr;
 	}
+	void setRaiz( int centroide);
 };

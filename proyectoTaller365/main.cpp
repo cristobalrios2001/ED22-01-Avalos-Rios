@@ -18,6 +18,7 @@
 #include <iomanip>
 #include <string>
 #include <ctime>
+#include <time.h>
 #include <cstdlib>
 #include <math.h>
 using namespace cv;
@@ -33,7 +34,17 @@ double calcularDistancia(Persona p, int distX, int distY) {
 
 int main(int argc, char** argv)
 {
-    int cont = 0;
+    /*
+    double tiempo = 0;
+    clock_t inicio, fin;
+    inicio = clock();
+    //codigo de ejecucion
+    fin = clock();
+    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
+    tiempo = time;*/
+
+
+
     BinaryTree arbol;
     arbol.insertar(175);
     arbol.insertarNodo(arbol.raiz, 150);

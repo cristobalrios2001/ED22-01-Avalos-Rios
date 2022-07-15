@@ -92,3 +92,6 @@ void BinaryTree::show(NodoArbol* raiz,int cont) {
 		show(raiz->izq, cont + 1);
 	}
 }
+void BinaryTree::setRaiz(int centroide) {
+	raiz->centroide = centroide;
+}

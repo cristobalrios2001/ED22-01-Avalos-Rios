@@ -11,7 +11,6 @@ class BinaryTree {
 
 public:
 	struct NodoArbol* raiz;
-	void insertar(int centroide);
 	void insertarNodo(NodoArbol*nodo,int centroide);	
 	int cantEntrantes();
 	int cuentaNodos(NodoArbol* nodo, int contador);

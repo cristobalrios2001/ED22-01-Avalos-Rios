@@ -43,14 +43,7 @@ int main(int argc, char** argv)
     double time = (double(fin - inicio) / CLOCKS_PER_SEC);
     tiempo = time;*/
 
-
-
     BinaryTree arbol;
-    arbol.insertar(175);
-    arbol.insertarNodo(arbol.raiz, 150);
-    arbol.insertarNodo(arbol.raiz, 200);
-    arbol.insertarNodo(arbol.raiz, 160);
-
     /*
     Linked* listaEntrada = new Linked();
     Linked* listaSalida = new Linked();

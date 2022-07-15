@@ -3,12 +3,6 @@
 #include "BinaryTree.hpp"
 
 
-void BinaryTree::insertar(int centroide) {
-	if (raiz == nullptr) {
-		raiz->centroide = centroide;
-	}
-}
-
 void BinaryTree::insertarNodo(NodoArbol* nodo, int centroide) {
 	if (nodo == nullptr) {
 		nodo = new NodoArbol();
@@ -35,7 +29,9 @@ void BinaryTree::insertarNodo(NodoArbol* nodo, int centroide) {
 		}
 	}
 }
-
+void BinaryTree::setRaiz(int centroide) {
+	raiz->centroide = centroide;
+}
 
 int BinaryTree::cantEntrantes() {
 	int contador = 0;
@@ -91,7 +87,4 @@ void BinaryTree::show(NodoArbol* raiz,int cont) {
 		cout << raiz->centroide << endl;
 		show(raiz->izq, cont + 1);
 	}
-}
-void BinaryTree::setRaiz(int centroide) {
-	raiz->centroide = centroide;
 }

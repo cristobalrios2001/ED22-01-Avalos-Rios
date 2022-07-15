@@ -4,7 +4,7 @@
 
 
 void BinaryTree::insertar(int centroide) {
-	raiz = insertar(centroide);
+	raiz = insertar(raiz,centroide);
 }
 NodoArbol* BinaryTree::insertar(NodoArbol* nodo, int centroide) {
 	if (nodo == nullptr) {
@@ -13,12 +13,11 @@ NodoArbol* BinaryTree::insertar(NodoArbol* nodo, int centroide) {
 		nodo->izq = nullptr;
 		nodo->der = nullptr;
 	}
-	else if (centroide < raiz) {
-		insertar(raiz->izq, centroide);
+	else if (centroide < nodo->centroide) {
+		nodo->izq = insertar(nodo->izq, centroide);
 	}
-	else if (centroide > raiz) {
-		insertar(raiz->der, centroide);
+	else if (centroide > nodo->centroide) {
+		nodo->der = insertar(nodo->der, centroide);
 	}
-
 	return nodo;
 }

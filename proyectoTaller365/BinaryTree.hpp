@@ -12,9 +12,12 @@ class BinaryTree {
 public:
 	struct NodoArbol* raiz;
 	void insertar(int centroide);
-	void insertarNodo(NodoArbol*nodo,int centroide);
-	void inorden(NodoArbol*nodo);
+	void insertarNodo(NodoArbol*nodo,int centroide);	
 	int cantEntrantes();
+	int cuentaNodos(NodoArbol* nodo, int contador);
+	bool isLeaf(NodoArbol* nodo);
+	int cantSalientes();
+
 	void show(NodoArbol*raiz,int cont);
 	BinaryTree() {
 		raiz = nullptr;

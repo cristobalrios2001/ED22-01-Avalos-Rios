@@ -35,22 +35,53 @@ void BinaryTree::insertarNodo(NodoArbol* nodo, int centroide) {
 		}
 	}
 }
-int BinaryTree:: cantEntrantes() {
+
+
+int BinaryTree::cantEntrantes() {
+	int contador = 0;
 	if (raiz != nullptr) {
 		NodoArbol* n = raiz->izq;
-		
+		contador = cuentaNodos(n, contador);
+	}
+	return contador;
+}
 
-		
+int BinaryTree::cantSalientes() {
+	int contador = 0;
+	if (raiz != nullptr) {
+		NodoArbol* n = raiz->der;
+		contador = cuentaNodos(n, contador);
+	}
+	return contador;
+}
+
+
+
+int  BinaryTree::cuentaNodos(struct NodoArbol* nodo, int contador) {
+	if (isLeaf(nodo)) {
+		contador++;
+		//cout<<nodo->dato;printf(":\tsumando hoja, \n");//se puede borrar esta linea
+	}
+	if (nodo->izq != nullptr) {
+		//printf("izq\n");
+		contador = cuentaNodos(nodo->izq, contador);
+		//cout<<nodo->dato;printf(":\tfin izq\n\n");//se puede borrar esta linea
+
+	}
+	if (nodo->der != nullptr) {
+		//printf("der\n");
+		contador = cuentaNodos(nodo->der, contador);
+		//cout<<nodo->dato;printf(":\tsumando raiz\n");//se puede borrar esta linea
+		contador++;
 	}
 }
 
-void BinaryTree :: inorden(NodoArbol*nodo) {
-	if (nodo != NULL) {
-		inorden(nodo->izq);
-		printf("%d,", nodo->centroide);
-		inorden(nodo->der);
-	}
+bool  BinaryTree::isLeaf(NodoArbol* nodo) {
+	if (nodo->der == nullptr && nodo->izq == nullptr)
+		return true;
+	return false;
 }
+
 
 void BinaryTree::show(NodoArbol* raiz,int cont) {
 	if (raiz == NULL) {

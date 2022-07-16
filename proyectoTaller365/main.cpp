@@ -7,7 +7,7 @@
 #include "Nodo.hpp"
 #include "Linked.hpp"
 #include "BinaryTree.hpp"
-#include "NodoArbol.hpp"
+//#include "NodoArbol.hpp"
 
 #include <opencv2/objdetect.hpp>
 #include <opencv2/highgui.hpp>
@@ -43,11 +43,24 @@ int main(int argc, char** argv)
     double time = (double(fin - inicio) / CLOCKS_PER_SEC);
     tiempo = time;*/
 
-    BinaryTree arbol;
-    arbol.setRaiz(175);
-    arbol.insertarNodo(arbol.raiz, 150);
-    arbol.insertarNodo(arbol.raiz, 200);
-    arbol.show(arbol.raiz,0);
+    BinaryTree* arbol = new BinaryTree();
+
+    //arbol->setRaiz(28);
+    //cout << arbol->getRaiz()->dato;
+
+    arbol->insertar(arbol->getRaiz(), 11);
+    arbol->insertar(arbol->getRaiz(), 96);
+    arbol->insertar(arbol->getRaiz(), 21);
+    arbol->insertar(arbol->getRaiz(), 6);
+    arbol->insertar(arbol->getRaiz(), 97);
+    arbol->insertar(arbol->getRaiz(), 1);
+    arbol->insertar(arbol->getRaiz(), 30);
+    arbol->insertar(arbol->getRaiz(), 10);
+    arbol->insertar(arbol->getRaiz(), 200);
+    arbol->insertar(arbol->getRaiz(), 180);
+    arbol->insertar(arbol->getRaiz(), 297);
+
+    arbol->show(arbol->getRaiz(), 0);
     /*
     Linked* listaEntrada = new Linked();
     Linked* listaSalida = new Linked();

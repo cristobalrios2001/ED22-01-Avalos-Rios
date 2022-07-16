@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 
-class NodoArbol{
+class NodoArbol {
 public:
 	int centroide;
 	NodoArbol* izq;

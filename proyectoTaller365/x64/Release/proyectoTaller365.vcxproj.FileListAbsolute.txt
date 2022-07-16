@@ -1,3 +1,4 @@
 C:\Users\crist\source\repos\proyectoTaller365\x64\Release\proyectoTaller365.exe
 C:\Users\Jefer\Documents\GitHub\tratandoDePasarElRamo\proyectoTaller365\x64\Release\ED22-01-Avalos-Rios.exe
 C:\Users\crist\OneDrive\Documentos\GitHub\tratandoDePasarElRamo\proyectoTaller365\x64\Release\ED22-01-Avalos-Rios.exe
+C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\x64\Release\ED22-01-Avalos-Rios.exe

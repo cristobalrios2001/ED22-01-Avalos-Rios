@@ -1,17 +1,7 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: El directorio intermedio (x64\Release\) contiene archivos compartidos de otro proyecto (proyectoTaller365.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
-  BinaryTree.cpp
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\BinaryTree.hpp(13,18): warning C4099: 'NodoArbol': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\NodoArbol.hpp(4): message : vea la declaración de 'NodoArbol'
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\BinaryTree.cpp(50,46): warning C4099: 'NodoArbol': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\NodoArbol.hpp(4): message : vea la declaración de 'NodoArbol'
-  Detector.cpp
-  Linked.cpp
   main.cpp
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\BinaryTree.hpp(22,1): error C2027: uso del tipo 'NodoArbol' sin definir
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\BinaryTree.hpp(13): message : vea la declaración de 'NodoArbol'
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\NodoArbol.hpp(4,16): warning C4099: 'NodoArbol': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\NodoArbol.hpp(4): message : vea la declaración de 'NodoArbol'
-  Nodo.cpp
-  Persona.cpp
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\Persona.cpp(15,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\Persona.cpp(16,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  All 31 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+  proyectoTaller365.vcxproj -> C:\Users\Jefer\Documents\GitHub\ED22-01-Avalos-Rios\proyectoTaller365\x64\Release\ED22-01-Avalos-Rios.exe

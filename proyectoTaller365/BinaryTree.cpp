@@ -1,5 +1,4 @@
 #include <iostream>
-#include "NodoArbol.hpp"
 #include "BinaryTree.hpp"
 
 BinaryTree::BinaryTree() {

@@ -2,30 +2,41 @@
 #include "NodoArbol.hpp"
 #include "BinaryTree.hpp"
 
+BinaryTree::BinaryTree() {
+	this->raiz = new NodoArbol(175);
+}
 
-void BinaryTree::insertarNodo(NodoArbol* nodo, int centroide) {
+NodoArbol* BinaryTree::getRaiz() {
+	return this->raiz;
+}
+
+void BinaryTree::insertar(NodoArbol* nodo, int centroide) {
 	if (centroide < nodo->centroide) {
-		if (nodo->izq == NULL) {
-			nodo->izq = new NodoArbol();
-			nodo->izq->centroide = centroide;
+		if (nodo->izq == nullptr) {
+			nodo->izq = new NodoArbol(centroide);
+			// NodoArbol* newNodo = new NodoArbol(centroide);
+				   //nodo->izquierda = newNodo;
+				   //nodo->izquierda->dato = centroide;
+			 //cout << "izquierda de: "<<nodo->dato<<", va: ";
+			 //cout << nodo->izquierda->dato<<endl;
 		}
 		else {
-			insertarNodo(nodo->izq, centroide);
+			insertar(nodo->izq, centroide);
 		}
 	}
 	else if (centroide > nodo->centroide) {
 		if (nodo->der == NULL) {
-			nodo->der = new NodoArbol();
-			nodo->der->centroide = centroide;
+			nodo->der = new NodoArbol(centroide);
+			//nodo->derecha->dato = centroide;
+	  //cout << "derecha: "<<nodo->dato<<", va: ";
+	  //cout << nodo->derecha->dato<<endl;
 		}
 		else {
-			insertarNodo(nodo->der, centroide);
+			insertar(nodo->der, centroide);
 		}
 	}
 }
-void BinaryTree::setRaiz(int centroide) {
-	raiz->centroide = centroide;
-}
+
 
 int BinaryTree::cantEntrantes() {
 	int contador = 0;

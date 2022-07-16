@@ -6,6 +6,6 @@ public:
 	int centroide;
 	NodoArbol* izq;
 	NodoArbol* der;
-	~NodoArbol();
+	NodoArbol(int centroide);
 
 };

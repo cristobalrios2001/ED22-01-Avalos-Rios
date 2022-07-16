@@ -8,18 +8,14 @@ using namespace cv;
 using namespace std;
 
 class BinaryTree {
-
+	NodoArbol* raiz;
 public:
-	struct NodoArbol* raiz;
-	void insertarNodo(NodoArbol*nodo,int centroide);	
+	BinaryTree();
+	void insertar(NodoArbol* nodo, int centroide);
+	NodoArbol* getRaiz();
 	int cantEntrantes();
 	int cuentaNodos(NodoArbol* nodo, int contador);
 	bool isLeaf(NodoArbol* nodo);
 	int cantSalientes();
-
-	void show(NodoArbol*raiz,int cont);
-	BinaryTree() {
-		raiz = new NodoArbol();
-	}
-	void setRaiz(int centroide);
+	void show(NodoArbol* raiz, int cont);
 };

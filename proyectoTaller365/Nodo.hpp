@@ -6,7 +6,7 @@
 
 class Nodo {
     Persona persona;
-    Nodo* next;
+    Nodo* next; 
 
 public:
     Nodo();

@@ -140,6 +140,7 @@
     <ClCompile Include="Linked.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Nodo.cpp" />
+    <ClCompile Include="NodoArbol.cpp" />
     <ClCompile Include="Persona.cpp" />
   </ItemGroup>
   <ItemGroup>

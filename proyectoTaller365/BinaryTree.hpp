@@ -13,9 +13,9 @@ public:
 	BinaryTree();
 	void insertar(NodoArbol* nodo, int centroide);
 	NodoArbol* getRaiz();
-	int cantEntrantes();
 	int cuentaNodos(NodoArbol* nodo, int contador);
 	bool isLeaf(NodoArbol* nodo);
+	int cantEntrantes();
 	int cantSalientes();
 	void show(NodoArbol* raiz, int cont);
 };

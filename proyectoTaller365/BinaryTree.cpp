@@ -13,11 +13,6 @@ void BinaryTree::insertar(NodoArbol* nodo, int centroide) {
 	if (centroide < nodo->centroide) {
 		if (nodo->izq == nullptr) {
 			nodo->izq = new NodoArbol(centroide);
-			// NodoArbol* newNodo = new NodoArbol(centroide);
-				   //nodo->izquierda = newNodo;
-				   //nodo->izquierda->dato = centroide;
-			 //cout << "izquierda de: "<<nodo->dato<<", va: ";
-			 //cout << nodo->izquierda->dato<<endl;
 		}
 		else {
 			insertar(nodo->izq, centroide);
@@ -26,9 +21,7 @@ void BinaryTree::insertar(NodoArbol* nodo, int centroide) {
 	else if (centroide > nodo->centroide) {
 		if (nodo->der == NULL) {
 			nodo->der = new NodoArbol(centroide);
-			//nodo->derecha->dato = centroide;
-	  //cout << "derecha: "<<nodo->dato<<", va: ";
-	  //cout << nodo->derecha->dato<<endl;
+
 		}
 		else {
 			insertar(nodo->der, centroide);
@@ -62,7 +55,8 @@ int  BinaryTree::cuentaNodos(struct NodoArbol* nodo, int contador) {
 		contador++;
 	}
 	if (nodo->izq != nullptr) {		
-		contador = cuentaNodos(nodo->izq, contador);	
+		contador = cuentaNodos(nodo->izq, contador);
+		contador++;
 
 	}
 	if (nodo->der != nullptr) {

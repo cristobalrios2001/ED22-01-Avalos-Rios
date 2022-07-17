@@ -98,16 +98,30 @@ void menu() {
     cout << " SALIENDO DEL SISTEMA......" << endl;
 }
 
-int main(int argc, char** argv)
-{
-    /*
+int tiempo_contador() {
     double tiempo = 0;
     clock_t inicio, fin;
     inicio = clock();
     //codigo de ejecucion
     fin = clock();
     double time = (double(fin - inicio) / CLOCKS_PER_SEC);
-    tiempo = time;*/
+    tiempo = time;
+    return tiempo;
+}
+
+float velocidad_Entrada(BinaryTree* arbol) {
+    float vel= (float)arbol->cantEntrantes() / tiempo_contador();
+    return vel;
+}
+
+float velocidad_Salida(BinaryTree* arbol) {
+    float vel = (float)arbol->cantSalientes() / tiempo_contador();
+    return vel;
+}
+
+int main(int argc, char** argv)
+{
+    
     /*
     BinaryTree* arbol = new BinaryTree();
     Linked* listaEntrada = new Linked();

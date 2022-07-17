@@ -30,6 +30,26 @@ double calcularDistancia(Persona p, int distX, int distY) {
     double distancia = sqrt(pow(distX - distPX, 2) + pow(distY - distPY, 2));
     return distancia;
 }
+void cargarImg(BinaryTree* arbol) {
+    Mat imagen;
+    Detector detector;
+    imagen = imread("images/images0292.png");
+    detector.toggleMode();
+    cout << detector.modeName() << endl;
+    vector<Persona> found = detector.detect(imagen);
+    for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
+    {
+        Persona& p = *i;
+        arbol->insertar(arbol->getRaiz(), p.getXCentro());
+        cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl;
+        rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 255, 0), 2);
+        circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);
+        circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
+        circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+    }
+
+    imshow("People detector", imagen);
+}
 void menu(BinaryTree* arbol, double tiempoT) {
     String resp;
     int opcion;

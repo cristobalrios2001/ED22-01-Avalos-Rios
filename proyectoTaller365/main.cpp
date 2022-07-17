@@ -30,7 +30,7 @@ double calcularDistancia(Persona p, int distX, int distY) {
     double distancia = sqrt(pow(distX - distPX, 2) + pow(distY - distPY, 2));
     return distancia;
 }
-void menu() {
+void menu(BinaryTree* arbol, int time) {
     String resp;
     int opcion;
     String salida = "No";
@@ -68,15 +68,19 @@ void menu() {
                     break;
                 case 2:
                     cout << "La cantidad de personas que han entrado son: " << endl;
+                    cout << arbol->cantEntrantes();
                     break;
                 case 3:
                     cout << "La cantidad de personas que han salido son: " << endl;
+                    cout <<arbol->cantSalientes();
                     break;
                 case 4:
                     cout << "La velocidad de las personas que han entrado es: " << endl;
+                    cout << arbol->cantEntrantes()/time;
                     break;
                 case 5:
                     cout << "La velocidad de las personas que han salido es: " << endl;
+                    cout << arbol->cantEntrantes()/time;
                     break;
                 case 6:
                     cout << "Saliendo del menu Guardia"<<endl;
@@ -99,14 +103,7 @@ void menu() {
 }
 
 int tiempo_contador() {
-    double tiempo = 0;
-    clock_t inicio, fin;
-    inicio = clock();
-    //codigo de ejecucion
-    fin = clock();
-    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
-    tiempo = time;
-    return tiempo;
+    
 }
 
 float velocidad_Entrada(BinaryTree* arbol) {
@@ -119,21 +116,63 @@ float velocidad_Salida(BinaryTree* arbol) {
     return vel;
 }
 
+void cargarImagenes() {
+
+}
+
 int main(int argc, char** argv)
-{
-    
-    /*
+{    
     BinaryTree* arbol = new BinaryTree();
-    Linked* listaEntrada = new Linked();
-    Linked* listaSalida = new Linked();
+    vector<string> images;
+    /*
+    double tiempo = 0;
+    clock_t inicio, fin;
+    inicio = clock();
+    //codigo de ejecucion
+    fin = clock();
+    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
+    tiempo = time;
+    return tiempo;
+    */
+
+    time_t now= time(0);
+    struct tm timeinfo;
+    time(&now);
+    localtime_s(&timeinfo, &now);
+    int Tinicio = timeinfo.tm_hour;
+
+    images.push_back("Resources/images0292.png");
+    images.push_back("Resources/images0293.png");
+    images.push_back("Resources/images1679.png");
+    images.push_back("Resources/images1680.png");
+
     Detector detector;
     Mat imagen;
-    imagen = imread("images/image0292.png");
-    detector.toggleMode();
+    
+    //detector.toggleMode();
+
+    for (string im : images) {
+        imagen = imread(im);
+        vector<Persona> found = detector.detect(imagen);
+        for (vector<Persona>::iterator i = found.begin(); i != found.end(); i++) {
+            Persona& p = *i;
+            arbol->insertar(arbol->getRaiz(), p.getXCentro());
+
+            rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
+            circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
+            circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
+            circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+        }
+    }
+
+    int Tfinal = timeinfo.tm_hour;
+    double time = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
+
+
+
     cout << detector.modeName() << endl;
-    vector<Persona> found = detector.detect(imagen);
-    int contadorEntrada = 0;
-    int contadorSalida = 0;
+    /*
+    vector<Persona> found = detector.detect(imagen);  //persona encontrada  
     for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
     {
         Persona& p = *i;
@@ -149,24 +188,24 @@ int main(int argc, char** argv)
         
         
     }
+    */
     Point p1(175, 0), p2(175, 300);//Linea
 
     int time = 1;
     line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
     imshow("People detector", imagen);
 
-    cout << "Entraron: " << arbol->cantEntrantes() << endl;
-    cout << "Salieron: " << arbol->cantSalientes() << endl;
+    //cout << "Entraron: " << arbol->cantEntrantes() << endl;
+    //cout << "Salieron: " << arbol->cantSalientes() << endl;
 
-    float veloEntra = (float)contadorEntrada / 3600;
-    float veloSalida = (float)contadorSalida / 3600;
+    
 
-    cout << "La velocidad de las personas que entran son :" << veloEntra << " segundos" << endl;
-    cout << "La velocidad de las persona que salen: " << veloSalida << " segundos" << endl;
+    //cout << "La velocidad de las personas que entran son :" << veloEntra << " segundos" << endl;
+    //cout << "La velocidad de las persona que salen: " << veloSalida << " segundos" << endl;
 
-    arbol->show(arbol->getRaiz(), 0);
-    */
-    menu();
+    //arbol->show(arbol->getRaiz(), 0);
+    
+    menu(arbol, time);
     waitKey(0);
     return 0; 
 }

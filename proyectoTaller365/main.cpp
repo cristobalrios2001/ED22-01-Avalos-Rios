@@ -30,6 +30,73 @@ double calcularDistancia(Persona p, int distX, int distY) {
     double distancia = sqrt(pow(distX - distPX, 2) + pow(distY - distPY, 2));
     return distancia;
 }
+void menu() {
+    String resp;
+    int opcion;
+    String salida = "No";
+    bool cierre = true;
+    while (salida != "Si") {
+        cout << "Bienvenido al Sistema de Vigilancia ACME " << endl;
+        cout << "Introduzca el perfil con el cual ingresara al sistema (Guardia) o (Administrador): ";
+        cin >> resp;
+        while (resp != "Guardia" && resp != "Administrador") {
+            cout << "Bienvenido al Sistema de Vigilancia ACME " << endl;
+            cout << "Introduzca el perfil con el cual ingresara al sistema (Guardia) o (Administrador): ";
+            cin >> resp;
+        }
+        if (resp == "Administrador") {
+            cout << "obteniendo imagenes a analizar" << endl;
+            cout << "Saliendo del modo Adminsitrador" << endl;
+        }
+        else{
+            while (cierre) {
+                cout << endl;
+                cout << "Desplegando opciones desponibles....." << endl;
+                cout << "1) Detectar a las personas" << endl;
+                cout << "2)Cantidad de personas que han entrado" << endl;
+                cout << "3)Cantidad de personas que han salido" << endl;
+                cout << "4)Velocidad de las personas que han entrado" << endl;
+                cout << "5)Velocidad de las personas que han salido" << endl;
+                cout << "6)Salir del menu Guardia" << endl;
+                cout << endl;
+                cout << "Introduzca la opcion que desee: ";
+                cin >> opcion;
+                switch (opcion)
+                {
+                case 1:
+                    cout << "Detectando personas..." << endl;
+                    break;
+                case 2:
+                    cout << "La cantidad de personas que han entrado son: " << endl;
+                    break;
+                case 3:
+                    cout << "La cantidad de personas que han salido son: " << endl;
+                    break;
+                case 4:
+                    cout << "La velocidad de las personas que han entrado es: " << endl;
+                    break;
+                case 5:
+                    cout << "La velocidad de las personas que han salido es: " << endl;
+                    break;
+                case 6:
+                    cout << "Saliendo del menu Guardia"<<endl;
+                    cierre = false;
+                    break;
+                default:
+                    cout << "Ingrese una de las opciones disponible porfavor......" << endl;
+                    break;
+                }
+            } 
+            cout << "Desea salir del sistema (Si) o (No)" << endl;
+            cin >> salida;
+            while (salida != "Si" && salida != "No") {
+                cout << "Desea salir del sistema (Si) o (No)" << endl;
+                cin >> salida;
+            }
+        }
+    }
+    cout << " SALIENDO DEL SISTEMA......" << endl;
+}
 
 int main(int argc, char** argv)
 {
@@ -41,10 +108,8 @@ int main(int argc, char** argv)
     fin = clock();
     double time = (double(fin - inicio) / CLOCKS_PER_SEC);
     tiempo = time;*/
+    /*
     BinaryTree* arbol = new BinaryTree();
-
-    //arbol->insertar(arbol->getRaiz(), 297);
-
     Linked* listaEntrada = new Linked();
     Linked* listaSalida = new Linked();
     Detector detector;
@@ -86,17 +151,9 @@ int main(int argc, char** argv)
     cout << "La velocidad de las persona que salen: " << veloSalida << " segundos" << endl;
 
     arbol->show(arbol->getRaiz(), 0);
-    waitKey(0); 
-    
+    */
+    menu();
+    waitKey(0);
     return 0; 
 }
-/*
-void menu() {
-    cout << "Bienvenido a las historias de usuario " << endl;
-    cout << "Ingrese la opcion que desea realizar: ";
-    cout << "1) Detectar a las personas" << endl;
-    cout << "2)Cantidad de personas que han entrado" << endl;
-    cout << "3)Cantidad de personas que han salido" << endl;
-    cout << "4)Velocidad de las personas que han entrado" << endl;
-    cout << "5)Velocidad de las personas que han salido" << endl;
-}*/
+

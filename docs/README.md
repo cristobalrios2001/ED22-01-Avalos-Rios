@@ -20,13 +20,13 @@
 
 ## 1. Introducción
 
-En los últimos años, la tecnología a avanzando de manera agigantada incluso llegando a nuestro dia a dia como es el caso de los smartphones. El reconocimiento de personas no se queda atrás,
-y las personas que dediquen su tiempo en aprender en investigar estas tecnologías, tendran una ventaja en ciertas situaciones en la actualidad. Para obtener estos conocimientos hace falta
-un proyecto que coloque a la persona a investigar sobre esta tecnología, como es el caso de este taller, el cual hará mejorar las habilidades y habituar.
+En los últimos años, la tecnología a avanzando de manera agigantada incluso llegando a nuestro dia a dia como es el caso de los smartphones el cual es un artefacto electronico que mediante una simple camara detecta cualquier tipo de objeto. El reconocimiento de personas no se queda atrás,
+y las personas que dediquen su tiempo en aprender e investigar estas tecnologías, tendran una ventaja en ciertas situaciones en la actualidad. Para obtener estos conocimientos hace falta
+un proyecto que coloque a la persona a investigar sobre esta tecnología, como es el caso de este taller, el cual hará mediante ciertos algoritmos e indagación profunda respecto al tema logrará con efectividad el reconocimientos de personas.
 
-Este taller trata de aprender a usar programas junto con herramientas que facilitan el reconocimiento de personas para lograr un objetivo que se establecen en los puntos posteriores los que 
-tienen relación con el poder de observar personas por las cámaras con el fin de llevar un registro de sus movimientos (entrada o salida) dentro de algún lugar. Para llevar a cabo los objetivos
-que planteamos más adelante se tendrá que recurrir a foros e investigar en detalle como usar las herramientas que nos proporcionan para trabajar de una manera eficaz y de esa manera podeer 
+Este taller trata de aprender a usar programas junto con herramientas que facilitan el reconocimiento de personas con el fin de lograr un objetivo principal el cual 
+tiene relación con el poder observar personas por las cámaras con el fin de llevar un registro de sus movimientos (entrada o salida) dentro de algún lugar. Para llevar a cabo los objetivos
+que planteamos más adelante se tendrá que recurrir a foros e investigar en detalle como usar las herramientas que nos proporcionan para trabajar de una manera eficaz y de esa manera poder 
 enfrentar todos los inconvenientes que se presenten.
 
 ### 1.1 Descripción del problema
@@ -42,8 +42,9 @@ Contruir un programa que detecte en una imagen/video a las personas, e identidiq
 **Objetivos específicos**
 1. Instalacion de la IDE Visual Studio, investigacion e instalacion de la biblioteca OpenCV y la herramienta CMaker.
 2. Contar cuantas personas entran y salen de un lugar.
-3. Calcular la velocidad a la cual las personas entras y salen de un lugar.
-4. Contar las personas diferentes que han entrado y salido de un lugar.
+3.Creación de un arbol binario 
+4. Calcular la velocidad de las personas que entran y salen de un lugar.
+5. Calcular el tiempo de ejecucioón del programa
 
 
 ### 1.3 Solución propuesta

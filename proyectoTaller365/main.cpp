@@ -113,6 +113,7 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
     localtime_s(&timeinfo, &now);
     int Tinicio = timeinfo.tm_hour;
 
+
     images.push_back("images/images0292.png");
     images.push_back("images/images0293.png");
     images.push_back("images/images1679.png");
@@ -137,6 +138,76 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
 
     int Tfinal = timeinfo.tm_hour;
     double time = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
+}
+
+void seleccionarImagenes(BinaryTree* arbol) {
+    vector<string> images;
+    arbol->eliminarBinaryTree(arbol->getRaiz());
+    BinaryTree* arbol = new BinaryTree();
+
+    time_t now = time(0);
+    struct tm timeinfo;
+    time(&now);
+    localtime_s(&timeinfo, &now);
+    int Tinicio = timeinfo.tm_hour;
+
+    int opcion;
+    cout << "Introduzca la opcion que desee(1, 2 o 3): ";
+    cin >> opcion;
+    switch (opcion)
+    {
+    case 1:
+        cout << "Cargando video 1." << endl;
+        imagenesCargar1( images);
+        break;
+    case 2:
+        cout << "Cargando video 2." << endl;
+        imagenesCargar2(images);
+        break;
+    case 3:
+        cout << "Cargando video 3." << endl;
+        imagenesCargar3(images);
+        break;
+    
+    default:
+        cout << "Ingrese una de las opciones disponible porfavor......(1, 2 o 3)" << endl;
+        break;
+    }
+
+    Detector detector;
+    Mat imagen;
+
+    for (string im : images) {
+        imagen = imread(im);
+        vector<Persona> found = detector.detect(imagen);
+        for (vector<Persona>::iterator i = found.begin(); i != found.end(); i++) {
+            Persona& p = *i;
+            arbol->insertar(arbol->getRaiz(), p.getXCentro());
+
+            rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
+            circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
+            circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
+            circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+        }
+    }
+
+    int Tfinal = timeinfo.tm_hour;
+    double time = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
+}
+
+void imagenesCargar1(vector<string> images) {
+    images.push_back("images/images0292.png");
+    images.push_back("images/images0293.png");
+}
+
+void imagenesCargar2(vector<string> images) {
+    images.push_back("images/images1679.png");
+    images.push_back("images/images1680.png");
+}
+
+void imagenesCargar3(vector<string> images) {
+    images.push_back("images/images0293.png");
+    images.push_back("images/images1679.png");
 }
 
 int main(int argc, char** argv)

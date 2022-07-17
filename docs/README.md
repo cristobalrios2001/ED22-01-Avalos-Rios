@@ -42,16 +42,17 @@ Contruir un programa que detecte en una imagen/video a las personas, e identidiq
 **Objetivos específicos**
 1. Instalacion de la IDE Visual Studio, investigacion e instalacion de la biblioteca OpenCV y la herramienta CMaker.
 2. Contar cuantas personas entran y salen de un lugar.
-3.Creación de un arbol binario 
+3. Creación de un arbol binario.
 4. Calcular la velocidad de las personas que entran y salen de un lugar.
-5. Calcular el tiempo de ejecucioón del programa
+5. Calcular el tiempo de ejecución del programa
 
 
 ### 1.3 Solución propuesta
 
-Construir un programa que permita reconocer a personsa con el motivo de poder dar respuesta a los requerimientos del guardia y que de esta manera,
+Construir un programa que permita reconocer a personas con el motivo de poder dar respuesta a los requerimientos del guardia y que de esta manera,
 con los datos que se recolectan, como la cantidad de personas, la velocidad de personas para obtener el flujo, y las personas diferentes que han 
 transitado, este guardia pueda desarrollar de manera eficiente su trabajo.
+Construir un programa que permita el reconocimientos de personas usando la librería OpenCV y las distintas herramientas disponibles de esta para la detección de personas en imagenes, esto con el fin de cumplir con los requirimientos que se solicitan ya sea de un guardia o del mismo administrador. Entre los puntos a desarrollar esta la velocidad de las personas que entran y salen y  el reconomiento de personas que entran y salen.
 
 ## 2. Materiales y métodos
 
@@ -75,6 +76,8 @@ con nuestro codigo todo esto de la mano del uso a orientacion a objetos, se podr
 La primera el primer entregable las clases implementadas son las siguientes:
 * Detector: Nos permite al ser reconocida ya la persona, que se cree un rectangulo a su alrededor.
 * Nodo: Es creado para la implementacion de la LinkedList.
+* NodoArbol : Es creado para ser implementado en el arbol binario
+* BinaryTree : Arbol binario el cual inicializa con un NodoArbol.
 * Linked: Es una LinkedList implementada por medio de nodos que nos permitira almacenar a las pesonas detectadas.
 * Persona: Contiene las caracteristcas del identificador y el centroide de cada persona detectada.
 
@@ -132,11 +135,22 @@ int contadorSalida = 0;
             contadorSalida++;
         }
 ```
+###Calculo del tiempo de ejecucion.
 
+Con este codigo calculo el tiempo de ejecucion de cierto bloque, el cual esta implementado en el medio de la funcion declarando su tiempo inicial y luego tiempo final de la ejecucion.
 
-
-
-
+```c++
+    double tiempo = 0;
+    clock_t inicio, fin;
+    inicio = clock();
+    //codigo de ejecucion
+    fin = clock();
+    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
+    tiempo = time;
+```
+###Linea que indica la mitad de la imagen
+Esta linea lo que hace es centrarse a la mitad de la imagen, facilitandonos ver si la persona en la iamgen está saliendo o está entrando
+```c++
 
 ## 3. Resultados obtenidos
 

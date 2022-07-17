@@ -159,7 +159,7 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
     int Tfinal = timeinfo.tm_hour;
     double tiempoT = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
 }
-
+/*
 void seleccionar_cargarImagenes_Personas(BinaryTree* arbol) {
     vector<string> images;
 
@@ -206,13 +206,11 @@ void opciones(vector<string> images) {
         break;
     case 2:
         images.push_back("images/images1679.png");
-        images.push_back("images/images1680.png");
-        
+        images.push_back("images/images1680.png");        
         break;
     case 3:
         images.push_back("images/images0293.png");
         images.push_back("images/images1679.png");
-
         break;
     
     default:
@@ -220,7 +218,7 @@ void opciones(vector<string> images) {
         break;
     }
 }
-
+*/
 
 double tiempoT =0;
 int main(int argc, char** argv)
@@ -232,6 +230,30 @@ int main(int argc, char** argv)
     
     //cargarImagenes_Personas(arbol);
     //arbol->show(arbol->getRaiz(),0);
+
+    Detector detector;
+    Mat imagen;
+    imagen = imread("images/image0292.png");
+    detector.toggleMode();
+    cout << detector.modeName() << endl;
+    vector<Persona> found = detector.detect(imagen);
+    int contadorEntrada = 0;
+    int contadorSalida = 0;
+    for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
+    {
+        Persona& p = *i;
+        arbol->insertar(arbol->getRaiz(), p.getXCentro());
+
+
+        //cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl; //coordenadas de las personas(centroides)
+        //detector.adjustRect(r);
+        rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
+        circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
+        circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
+        circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+
+
+    }
     menu(arbol, tiempoT);
     waitKey(0);
     return 0; 

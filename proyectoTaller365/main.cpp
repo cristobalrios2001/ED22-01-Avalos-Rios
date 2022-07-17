@@ -104,7 +104,7 @@ void menu(BinaryTree* arbol, int time) {
 
 
 
-void cargarImagenes_Peronsonas(BinaryTree* arbol) {
+void cargarImagenes_Personas(BinaryTree* arbol) {
     vector<string> images;
 
     time_t now = time(0);
@@ -113,10 +113,10 @@ void cargarImagenes_Peronsonas(BinaryTree* arbol) {
     localtime_s(&timeinfo, &now);
     int Tinicio = timeinfo.tm_hour;
 
-    images.push_back("Resources/images0292.png");
-    images.push_back("Resources/images0293.png");
-    images.push_back("Resources/images1679.png");
-    images.push_back("Resources/images1680.png");
+    images.push_back("images/images0292.png");
+    images.push_back("images/images0293.png");
+    images.push_back("images/images1679.png");
+    images.push_back("images/images1680.png");
 
     Detector detector;
     Mat imagen;
@@ -206,7 +206,9 @@ int main(int argc, char** argv)
 
     //arbol->show(arbol->getRaiz(), 0);
     
-    menu(arbol, time);
+    cargarImagenes_Personas(arbol);
+    arbol->show(arbol->getRaiz(),0);
+   // menu(arbol, time);
     waitKey(0);
     return 0; 
 }

@@ -30,7 +30,7 @@ double calcularDistancia(Persona p, int distX, int distY) {
     double distancia = sqrt(pow(distX - distPX, 2) + pow(distY - distPY, 2));
     return distancia;
 }
-void menu(BinaryTree* arbol, int time) {
+void menu(BinaryTree* arbol, double tiempoT) {
     String resp;
     int opcion;
     String salida = "No";
@@ -76,11 +76,11 @@ void menu(BinaryTree* arbol, int time) {
                     break;
                 case 4:
                     cout << "La velocidad de las personas que han entrado es: " << endl;
-                    cout << arbol->cantEntrantes()/time;
+                    cout << arbol->cantEntrantes()/ tiempoT;
                     break;
                 case 5:
                     cout << "La velocidad de las personas que han salido es: " << endl;
-                    cout << arbol->cantEntrantes()/time;
+                    cout << arbol->cantEntrantes()/ tiempoT;
                     break;
                 case 6:
                     cout << "Saliendo del menu Guardia"<<endl;
@@ -112,15 +112,7 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
     time(&now);
     localtime_s(&timeinfo, &now);
     int Tinicio = timeinfo.tm_hour;
-    /*
-    double tiempo = 0;
-    clock_t inicio, fin;
-    inicio = clock();
-    //codigo de ejecucion
-    fin = clock();
-    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
-    tiempo = time;
-    return tiempo;*/
+   
 
     images.push_back("images/images0292.png");//proyectoTaller365/images/image0292.png
     images.push_back("images/images0293.png");//proyectoTaller365/images/image0293.png
@@ -145,67 +137,82 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
     }
 
     int Tfinal = timeinfo.tm_hour;
-    double time = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
+    double tiempoT = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
 }
 
+void seleccionar_cargarImagenes_Personas(BinaryTree* arbol) {
+    vector<string> images;
+
+    time_t now = time(0);
+    struct tm timeinfo;
+    time(&now);
+    localtime_s(&timeinfo, &now);
+    int Tinicio = timeinfo.tm_hour;
+    
+
+    opciones(images);
+
+    Detector detector;
+    Mat imagen;
+
+    for (string im : images) {
+        imagen = imread(im);
+        vector<Persona> found = detector.detect(imagen);
+        for (vector<Persona>::iterator i = found.begin(); i != found.end(); i++) {
+            Persona& p = *i;
+            arbol->insertar(arbol->getRaiz(), p.getXCentro());
+
+            rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
+            circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
+            circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
+            circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+        }
+    }
+
+    int Tfinal = timeinfo.tm_hour;
+    double time = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
+}
+void opciones(vector<string> images) {
+    int opcion;
+    cout << "Seleccione 1, 2 o 3." << endl;
+    
+    cout << "Introduzca la opcion que desee: ";
+    cin >> opcion;
+    switch (opcion)
+    {
+    case 1:
+        images.push_back("images/images0292.png");
+        images.push_back("images/images0293.png");
+        break;
+    case 2:
+        images.push_back("images/images1679.png");
+        images.push_back("images/images1680.png");
+        
+        break;
+    case 3:
+        images.push_back("images/images0293.png");
+        images.push_back("images/images1679.png");
+
+        break;
+    
+    default:
+        cout << "Ingrese una de las opciones disponible porfavor......(1,2 o 3)" << endl;
+        break;
+    }
+}
+
+
+double tiempoT =0;
 int main(int argc, char** argv)
 {    
     BinaryTree* arbol = new BinaryTree();
     
-    /*
-    images.push_back("Resources/images0292.png");
-    images.push_back("Resources/images0293.png");
-    images.push_back("Resources/images1679.png");
-    images.push_back("Resources/images1680.png");
-    */
-    
-
-    
-    
-    //detector.toggleMode();
-
-    
-
-
-
-    //cout << detector.modeName() << endl;
-    /*
-    vector<Persona> found = detector.detect(imagen);  //persona encontrada  
-    for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
-    {
-        Persona& p = *i;
-        arbol->insertar(arbol->getRaiz(), p.getXCentro());
-        
-
-        //cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl; //coordenadas de las personas(centroides)
-        //detector.adjustRect(r);
-        rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
-        circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
-        circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
-        circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2); 
-        
-        
-    }
-    */
     Point p1(175, 0), p2(175, 300);//Linea
 
     
-    //line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
-    //imshow("People detector", imagen);
-
-    //cout << "Entraron: " << arbol->cantEntrantes() << endl;
-    //cout << "Salieron: " << arbol->cantSalientes() << endl;
-
-    
-
-    //cout << "La velocidad de las personas que entran son :" << veloEntra << " segundos" << endl;
-    //cout << "La velocidad de las persona que salen: " << veloSalida << " segundos" << endl;
-
-    //arbol->show(arbol->getRaiz(), 0);
-    
-    cargarImagenes_Personas(arbol);
-    arbol->show(arbol->getRaiz(),0);
-   // menu(arbol, time);
+    //cargarImagenes_Personas(arbol);
+    //arbol->show(arbol->getRaiz(),0);
+    menu(arbol, tiempoT);
     waitKey(0);
     return 0; 
 }

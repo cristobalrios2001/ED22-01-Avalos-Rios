@@ -50,7 +50,7 @@ int BinaryTree::cantSalientes() {
 
 
 
-int  BinaryTree::cuentaNodos(struct NodoArbol* nodo, int contador) {
+int  BinaryTree::cuentaNodos(NodoArbol* nodo, int contador) {
 	if (isLeaf(nodo)) {
 		contador++;
 	}

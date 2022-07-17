@@ -102,40 +102,12 @@ void menu(BinaryTree* arbol, int time) {
     cout << " SALIENDO DEL SISTEMA......" << endl;
 }
 
-int tiempo_contador() {
-    
-}
 
-float velocidad_Entrada(BinaryTree* arbol) {
-    float vel= (float)arbol->cantEntrantes() / tiempo_contador();
-    return vel;
-}
 
-float velocidad_Salida(BinaryTree* arbol) {
-    float vel = (float)arbol->cantSalientes() / tiempo_contador();
-    return vel;
-}
-
-void cargarImagenes() {
-
-}
-
-int main(int argc, char** argv)
-{    
-    BinaryTree* arbol = new BinaryTree();
+void cargarImagenes_Peronsonas(BinaryTree* arbol) {
     vector<string> images;
-    /*
-    double tiempo = 0;
-    clock_t inicio, fin;
-    inicio = clock();
-    //codigo de ejecucion
-    fin = clock();
-    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
-    tiempo = time;
-    return tiempo;
-    */
 
-    time_t now= time(0);
+    time_t now = time(0);
     struct tm timeinfo;
     time(&now);
     localtime_s(&timeinfo, &now);
@@ -148,8 +120,6 @@ int main(int argc, char** argv)
 
     Detector detector;
     Mat imagen;
-    
-    //detector.toggleMode();
 
     for (string im : images) {
         imagen = imread(im);
@@ -167,10 +137,41 @@ int main(int argc, char** argv)
 
     int Tfinal = timeinfo.tm_hour;
     double time = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
+}
+
+int main(int argc, char** argv)
+{    
+    BinaryTree* arbol = new BinaryTree();
+    
+    /*
+    double tiempo = 0;
+    clock_t inicio, fin;
+    inicio = clock();
+    //codigo de ejecucion
+    fin = clock();
+    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
+    tiempo = time;
+    return tiempo;
+    */
+
+    
+    /*
+    images.push_back("Resources/images0292.png");
+    images.push_back("Resources/images0293.png");
+    images.push_back("Resources/images1679.png");
+    images.push_back("Resources/images1680.png");
+    */
+    
+
+    
+    
+    //detector.toggleMode();
+
+    
 
 
 
-    cout << detector.modeName() << endl;
+    //cout << detector.modeName() << endl;
     /*
     vector<Persona> found = detector.detect(imagen);  //persona encontrada  
     for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
@@ -191,9 +192,9 @@ int main(int argc, char** argv)
     */
     Point p1(175, 0), p2(175, 300);//Linea
 
-    int time = 1;
-    line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
-    imshow("People detector", imagen);
+    
+    //line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
+    //imshow("People detector", imagen);
 
     //cout << "Entraron: " << arbol->cantEntrantes() << endl;
     //cout << "Salieron: " << arbol->cantSalientes() << endl;

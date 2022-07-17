@@ -86,3 +86,21 @@ void BinaryTree::show(NodoArbol* raiz,int cont) {
 		show(raiz->izq, cont + 1);
 	}
 }
+
+void BinaryTree::eliminarBinaryTree(NodoArbol* raiz)
+{
+	
+	if (raiz == nullptr) {
+		return;
+	}
+
+	
+	eliminarBinaryTree(raiz->izq);
+	eliminarBinaryTree(raiz->der);
+
+	
+	delete raiz;
+
+	
+	raiz = nullptr;
+}

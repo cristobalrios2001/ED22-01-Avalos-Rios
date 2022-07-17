@@ -18,4 +18,5 @@ public:
 	int cantEntrantes();
 	int cantSalientes();
 	void show(NodoArbol* raiz, int cont);
+	void eliminarBinaryTree(NodoArbol* raiz);
 };

@@ -112,11 +112,20 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
     time(&now);
     localtime_s(&timeinfo, &now);
     int Tinicio = timeinfo.tm_hour;
+    /*
+    double tiempo = 0;
+    clock_t inicio, fin;
+    inicio = clock();
+    //codigo de ejecucion
+    fin = clock();
+    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
+    tiempo = time;
+    return tiempo;*/
 
-    images.push_back("images/images0292.png");
-    images.push_back("images/images0293.png");
-    images.push_back("images/images1679.png");
-    images.push_back("images/images1680.png");
+    images.push_back("images/images0292.png");//proyectoTaller365/images/image0292.png
+    images.push_back("images/images0293.png");//proyectoTaller365/images/image0293.png
+    images.push_back("images/images1679.png");//proyectoTaller365/images/image1679.png
+    images.push_back("images/images1680.png");//proyectoTaller365/images/image1680.png
 
     Detector detector;
     Mat imagen;
@@ -142,18 +151,6 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
 int main(int argc, char** argv)
 {    
     BinaryTree* arbol = new BinaryTree();
-    
-    /*
-    double tiempo = 0;
-    clock_t inicio, fin;
-    inicio = clock();
-    //codigo de ejecucion
-    fin = clock();
-    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
-    tiempo = time;
-    return tiempo;
-    */
-
     
     /*
     images.push_back("Resources/images0292.png");

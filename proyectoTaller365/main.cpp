@@ -271,8 +271,15 @@ int main(int argc, char** argv)
     line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
 
     imshow("People detector", imagen);
-
-    menu(arbol, tiempoT);
+    string rep;
+    cout << "Desea ver el menu?: ";
+    cin >> rep;
+    if (rep == "si") {
+        menu(arbol, tiempoT);
+    }
+    else {
+        cout << "chao";
+    }
     waitKey(0);
     return 0; 
 }

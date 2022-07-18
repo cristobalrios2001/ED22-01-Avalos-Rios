@@ -4,8 +4,6 @@
 
 #include "Detector.hpp"
 #include "Persona.hpp"
-#include "Nodo.hpp"
-#include "Linked.hpp"
 #include "BinaryTree.hpp"
 
 #include <opencv2/objdetect.hpp>
@@ -30,8 +28,7 @@ double calcularDistancia(Persona p, int distX, int distY) {
     double distancia = sqrt(pow(distX - distPX, 2) + pow(distY - distPY, 2));
     return distancia;
 }
-
-
+/*
 void cargarImg(BinaryTree* arbol) {
     Detector detector;
     Mat imagen;
@@ -61,10 +58,7 @@ void cargarImg(BinaryTree* arbol) {
     line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
 
     imshow("People detector", imagen);
-}
-
-
-
+}*/
 void menu(BinaryTree* arbol, double tiempoT) {
     String resp;
     int opcion;
@@ -116,7 +110,7 @@ void menu(BinaryTree* arbol, double tiempoT) {
                     break;
                 case 5:
                     cout << "La velocidad de las personas que han salido es: " << endl;
-                    cout << arbol->cantEntrantes()/ tiempoT;
+                    cout << arbol->cantSalientes()/ tiempoT;
                     break;
                 case 6:
                     cout << "Saliendo del menu Guardia"<<endl;
@@ -137,9 +131,7 @@ void menu(BinaryTree* arbol, double tiempoT) {
     }
     cout << " SALIENDO DEL SISTEMA......" << endl;
 }
-
-
-
+/*
 void cargarImagenes_Personas(BinaryTree* arbol) {
     vector<string> images;
 
@@ -174,7 +166,7 @@ void cargarImagenes_Personas(BinaryTree* arbol) {
 
     int Tfinal = timeinfo.tm_hour;
     double tiempoT = (double(Tfinal - Tinicio) / CLOCKS_PER_SEC);
-}
+}*/
 /*
 void seleccionar_cargarImagenes_Personas(BinaryTree* arbol) {
     vector<string> images;
@@ -237,28 +229,24 @@ void opciones(vector<string> images) {
 */
 
 double tiempoT =0;
+
 int main(int argc, char** argv)
 {    
     BinaryTree* arbol = new BinaryTree();
-    //cargarImagenes_Personas(arbol);
-    //arbol->show(arbol->getRaiz(),0);
     
     Detector detector;
     Mat imagen;
+    double tiempo = 0;
+    clock_t inicio, fin;
+    inicio = clock();
     imagen = imread("images/image0292.png");
     detector.toggleMode();
     cout << detector.modeName() << endl;
     vector<Persona> found = detector.detect(imagen);
-    int contadorEntrada = 0;
-    int contadorSalida = 0;
     for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
     {
         Persona& p = *i;
         arbol->insertar(arbol->getRaiz(), p.getXCentro());
-
-
-        //cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl; //coordenadas de las personas(centroides)
-        //detector.adjustRect(r);
         rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
         circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
         circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
@@ -267,19 +255,14 @@ int main(int argc, char** argv)
 
     }
     Point p1(175, 0), p2(175, 300);
-    int time = 1;
-    line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
+    double t = 1;
+    line(imagen, p1, p2, Scalar(255, 0, 0), t, LINE_8);
 
     imshow("People detector", imagen);
-    string rep;
-    cout << "Desea ver el menu?: ";
-    cin >> rep;
-    if (rep == "si") {
-        menu(arbol, tiempoT);
-    }
-    else {
-        cout << "chao";
-    }
+    fin = clock();
+    double time = (double(fin - inicio) / CLOCKS_PER_SEC);
+    tiempo = time;
+    menu(arbol,tiempo);
     waitKey(0);
     return 0; 
 }

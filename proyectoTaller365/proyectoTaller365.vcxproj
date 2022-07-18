@@ -137,9 +137,7 @@
   <ItemGroup>
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Detector.cpp" />
-    <ClCompile Include="Linked.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="NodoArbol.cpp" />
     <ClCompile Include="Persona.cpp" />
   </ItemGroup>
@@ -147,8 +145,6 @@
     <ClInclude Include="BinaryTree.hpp" />
     <ClInclude Include="NodoArbol.hpp" />
     <ClInclude Include="Detector.hpp" />
-    <ClInclude Include="Linked.hpp" />
-    <ClInclude Include="Nodo.hpp" />
     <ClInclude Include="Persona.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

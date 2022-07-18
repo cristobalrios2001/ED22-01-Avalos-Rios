@@ -41,15 +41,19 @@ void cargarImg(BinaryTree* arbol) {
     {
         Persona& p = *i;
         arbol->insertar(arbol->getRaiz(), p.getXCentro());
-        cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl;
+        //cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl;
         rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 255, 0), 2);
         circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);
         circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
         circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
     }
+    Point p1(175, 0), p2(175, 300);
+    int time = 1;
+    line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
 
     imshow("People detector", imagen);
 }
+
 void menu(BinaryTree* arbol, double tiempoT) {
     String resp;
     int opcion;
@@ -85,6 +89,7 @@ void menu(BinaryTree* arbol, double tiempoT) {
                 {
                 case 1:
                     cout << "Detectando personas..." << endl;
+                    //cargarImg(arbol);
                     break;
                 case 2:
                     cout << "La cantidad de personas que han entrado son: " << endl;
@@ -224,13 +229,9 @@ double tiempoT =0;
 int main(int argc, char** argv)
 {    
     BinaryTree* arbol = new BinaryTree();
-    
-    Point p1(175, 0), p2(175, 300);//Linea
-
-    
     //cargarImagenes_Personas(arbol);
     //arbol->show(arbol->getRaiz(),0);
-
+    /*
     Detector detector;
     Mat imagen;
     imagen = imread("images/image0292.png");
@@ -254,6 +255,11 @@ int main(int argc, char** argv)
 
 
     }
+    Point p1(175, 0), p2(175, 300);
+    int time = 1;
+    line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
+
+    imshow("People detector", imagen);*/
     menu(arbol, tiempoT);
     waitKey(0);
     return 0; 

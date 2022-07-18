@@ -54,6 +54,8 @@ con los datos que se recolectan, como la cantidad de personas, la velocidad de p
 transitado, este guardia pueda desarrollar de manera eficiente su trabajo.
 Construir un programa que permita el reconocimientos de personas usando la librería OpenCV y las distintas herramientas disponibles de esta para la detección de personas en imagenes, esto con el fin de cumplir con los requirimientos que se solicitan ya sea de un guardia o del mismo administrador. Entre los puntos a desarrollar esta la velocidad de las personas que entran y salen y  el reconomiento de personas que entran y salen.
 
+Construir un programa que permita el reconocimiento de personas para poder dar respuesta a los requerimientos del guardia y de esta manera poder recolectar los datos solicitados. Entre estos datos está la cantidad de personas que entran y salen, y por otra parte la velocidad de las personas que entran y salen; de esta forma se podrá dar respuesta a lo solicitado. El uso de la librería OpenCV será de vital importancia ya que se usará las distintas herrramientas que esta librería tiene para la detección de personas en imagenes.Además del uso de la librería se ocupará una estructura jerarquica en este caso un arbol binario para ordenarlas las posiciones de las personas dentro de la imagen.
+
 ## 2. Materiales y métodos
 
 * IDE Visual Studio Community 2022.
@@ -75,10 +77,8 @@ con nuestro codigo todo esto de la mano del uso a orientacion a objetos, se podr
 
 La primera el primer entregable las clases implementadas son las siguientes:
 * Detector: Nos permite al ser reconocida ya la persona, que se cree un rectangulo a su alrededor.
-* Nodo: Es creado para la implementacion de la LinkedList.
-* NodoArbol : Es creado para ser implementado en el arbol binario
+* NodoArbol : Nodo creado para ser implementado en el arbol binario.
 * BinaryTree : Arbol binario el cual inicializa con un NodoArbol.
-* Linked: Es una LinkedList implementada por medio de nodos que nos permitira almacenar a las pesonas detectadas.
 * Persona: Contiene las caracteristcas del identificador y el centroide de cada persona detectada.
 
 
@@ -191,12 +191,12 @@ line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
 	
 ```
 ## 3. Resultados obtenidos
-
-Una vez terminada la ejecución del programa esta nos arroja la imagen que habiamos preseleccionado cuyo son personas pero con 
-la diferencia de que ahora estarían identificadas por el código, mostrando asi cinco rectángulos rojos en cada persona. Ademas cada persona,
-tiene un identificado personal.
+	
+En lo que respecta a los resultados obtenidos se logró poder identificar las personas que van entrando o saliendo en la imagen correspondiente, mostrando dentro de la imagen los 3 rectangulos correspondientes a las personas detectadas, además del calculo de la velocidad de estas personas. Frente a esta resolucion de este sistema  hubo un problema a la hora de ejecutar el menu con la imagen dentro de este, ya que no reconocía el vector en donde se almacena la imagen. Debido a esto planteamos a última hora el inicio del programa de otra forma
 
 ## 4. Conclusiones
+	
+Para el desarrollo del sistema realizado se necesito variadas fuentes de informacion con el fin de investigar respecto a la librería OpenCV la cual era el eje principal para el desarrollo de este proyecto, además dentro de la ejecucion del programa hubo varios percances también respecto al uso de la IDE y de los "includes" correspondientes al lenguaje de programación C++. Por otra parte cabe recalcar que al principio incluimos la informacion de las personas en una LinkedList pero al ejecutar ciertos cambios planteamos el uso de una estructura jerarquica conocida como "Arboles Binarios" los cuales se nos hacía más facil interpretar así a las personas que estén entrando o saliendo a la hora de ejecutar el sistema. Respecto al objetivo principal se logro plasmar dentro de una imagen el reconocimiento de personas y con esto su ubicación dentro de la imagen para lograr ver si están saliendo o entrando al espacio físico de la imagen, pero al momento de ejecutar el programa final tuvimos un incoveniente el cual no imprímia la imagen para detectar las personas pero dentro del sistema si organizaba los datos de las personas detectadas por lo que tuvimos que hacer unos pequeños arreglos dentro del menú. Por último podemos decir que el desarrollo de este programa puede ser muy eficiente si se le da un enfoque mas a futuro.
 
 # Anexos
 
@@ -215,10 +215,3 @@ tiene un identificado personal.
 # Referecia
 
 Fusia, C., Quiroa, L., Silva, S., Wolukanis, F. V., Boulabiar, I., Babu, S., Alexandrou, F., & Chedella, P. (2021, 16 julio). Code OpenCV in Visual Studio. LearnOpenCV – OpenCV, PyTorch, Keras, Tensorflow Examples and Tutorials. https://learnopencv.com/code-opencv-in-visual-studio/
-
-
-
-## 4. Conclusiones
-Respecto al trabajo realizado anteriormente se puede destacar que uno de los puntos claves en el desarrollo del proyecto fue el cambio de ID, debido a que en un principio empezamos usando Visual Studio Code, lo cual nos genero muchos problemas desde un inicio provocando que el tiempo de trabajo se convirtiera en tiempo de ajustes de ID, la solución frente a este problema fue cambiarnos de ID a Visual Studio Manager 2022 lo cual nos ayudo mucho con los ajustes indicados vistos en videos de la asignatura.Con este hecho logramos compilar el programa de forma correcta y pudiendo avanzar en el código.Respecto a nuestros avances fueron muy equitativos por ambas partes lo cual nos ayudo a poder recuperar el tiempo perdido anteriormente. Junto con esto durante el desarrollo del proyecto se realizaron distintas investigaciones que nos ayudaron a entender más el lenguaje a trabajar en este caso C++. Por otra parte  los resultados que obtuvimos gran parte de lo que esperabamos ya que obtuvimos la imagen con el 
-cuadrado de la persona en color rojo, ademas de las historias de usuario como los contadores de personas, el flujo de estas y el almacenamiento para el manejo de 
-esta información

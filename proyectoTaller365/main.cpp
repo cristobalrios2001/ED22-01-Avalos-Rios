@@ -30,22 +30,31 @@ double calcularDistancia(Persona p, int distX, int distY) {
     double distancia = sqrt(pow(distX - distPX, 2) + pow(distY - distPY, 2));
     return distancia;
 }
+
+
 void cargarImg(BinaryTree* arbol) {
-    Mat imagen;
     Detector detector;
-    imagen = imread("images/images0292.png");
+    Mat imagen;
+    imagen = imread("images/image0292.png");
     detector.toggleMode();
     cout << detector.modeName() << endl;
     vector<Persona> found = detector.detect(imagen);
+    int contadorEntrada = 0;
+    int contadorSalida = 0;
     for (vector<Persona>::iterator i = found.begin(); i != found.end(); ++i)
     {
         Persona& p = *i;
         arbol->insertar(arbol->getRaiz(), p.getXCentro());
-        //cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl;
-        rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 255, 0), 2);
-        circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);
+
+
+        //cout << "(" << p.getXComienzo() << ", " << p.getYComienzo() << ")" << endl; //coordenadas de las personas(centroides)
+        //detector.adjustRect(r);
+        rectangle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), cv::Point(p.getXFin(), p.getYFin()), cv::Scalar(0, 0, 255), 2);
+        circle(imagen, cv::Point(p.getXCentro(), p.getYCentro()), 3, cv::Scalar(0, 0, 255), 3);//centroide
         circle(imagen, cv::Point(p.getXComienzo(), p.getYComienzo()), 3, cv::Scalar(255, 0, 255), 2);
         circle(imagen, cv::Point(p.getXFin(), p.getYFin()), 3, cv::Scalar(0, 255, 255), 2);
+
+
     }
     Point p1(175, 0), p2(175, 300);
     int time = 1;
@@ -53,6 +62,8 @@ void cargarImg(BinaryTree* arbol) {
 
     imshow("People detector", imagen);
 }
+
+
 
 void menu(BinaryTree* arbol, double tiempoT) {
     String resp;
@@ -231,7 +242,7 @@ int main(int argc, char** argv)
     BinaryTree* arbol = new BinaryTree();
     //cargarImagenes_Personas(arbol);
     //arbol->show(arbol->getRaiz(),0);
-    /*
+    
     Detector detector;
     Mat imagen;
     imagen = imread("images/image0292.png");
@@ -259,7 +270,8 @@ int main(int argc, char** argv)
     int time = 1;
     line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);
 
-    imshow("People detector", imagen);*/
+    imshow("People detector", imagen);
+
     menu(arbol, tiempoT);
     waitKey(0);
     return 0; 

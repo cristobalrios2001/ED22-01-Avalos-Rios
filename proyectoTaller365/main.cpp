@@ -20,14 +20,6 @@
 #include <math.h>
 using namespace cv;
 using namespace std;
-
-double calcularDistancia(Persona p, int distX, int distY) {
-    int distPX = p.getXCentro();
-    int distPY = p.getXCentro();
-
-    double distancia = sqrt(pow(distX - distPX, 2) + pow(distY - distPY, 2));
-    return distancia;
-}
 /*
 void cargarImg(BinaryTree* arbol) {
     Detector detector;

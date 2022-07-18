@@ -120,22 +120,55 @@ a la posicion del centroide.
 
 ### Contador de Personas.
 
-Con este codigo, se inicializan unas variables con el fin de almacenar la cantidad de personas. Dentro del codigo en el cual se reconocen las personas 
-se coloco una condición con respecto a la posición dentro de la imagen.
+Lo que hace la funcion de contar nodos es contar los nodos del arbol de forma recursiva. Y junto con esto se integra la segunda función para ver si al momento de recorrer se encuentra algún nodo terminal.
 
 ```c++
-int contadorEntrada = 0;
-int contadorSalida = 0;
-	...
+int  BinaryTree::cuentaNodos(NodoArbol* nodo, int contador) {
+	if (isLeaf(nodo)) {
+		contador++;
+	}
+	if (nodo->izq != nullptr) {		
+		contador = cuentaNodos(nodo->izq, contador);
+		contador++;
 
-	if (p.getXCentro() > 175) {
-            contadorEntrada++;
-        }
-        else {
-            contadorSalida++;
-        }
+	}
+	if (nodo->der != nullptr) {
+		contador = cuentaNodos(nodo->der, contador);		
+		contador++;
+	}
+	return contador;
+}
+
+bool  BinaryTree::isLeaf(NodoArbol* nodo) {
+	if (nodo->der == nullptr && nodo->izq == nullptr)
+		return true;
+	return false;
+}
 ```
-###Calculo del tiempo de ejecucion.
+### Cantidad Personas Entrantes y Salientes.
+
+En este caso para calcular la cantidad de personas que entran y salen, ocupamos la funcion de contarNodos.	
+```c++
+int BinaryTree::cantEntrantes() {
+	int contador = 0;
+	if (raiz != nullptr) {
+		NodoArbol* n = raiz->izq;
+		contador = cuentaNodos(n, contador);
+	}
+	return contador;
+}
+
+int BinaryTree::cantSalientes() {
+	int contador = 0;
+	if (raiz != nullptr) {
+		NodoArbol* n = raiz->der;
+		contador = cuentaNodos(n, contador);
+	}
+	return contador;
+}
+	
+```		
+### Calculo del tiempo de ejecución.
 
 Con este codigo calculo el tiempo de ejecucion de cierto bloque, el cual esta implementado en el medio de la funcion declarando su tiempo inicial y luego tiempo final de la ejecucion.
 
@@ -143,15 +176,20 @@ Con este codigo calculo el tiempo de ejecucion de cierto bloque, el cual esta im
     double tiempo = 0;
     clock_t inicio, fin;
     inicio = clock();
-    //codigo de ejecucion
+    //Bloque de ejecucion
     fin = clock();
     double time = (double(fin - inicio) / CLOCKS_PER_SEC);
     tiempo = time;
 ```
-###Linea que indica la mitad de la imagen
+### Linea que indica la mitad de la imagen.
+	
 Esta linea lo que hace es centrarse a la mitad de la imagen, facilitandonos ver si la persona en la iamgen está saliendo o está entrando
 ```c++
-
+Point p1(175, 0), p2(175, 300);
+int time = 1;
+line(imagen, p1, p2, Scalar(255, 0, 0), time, LINE_8);	
+	
+```
 ## 3. Resultados obtenidos
 
 Una vez terminada la ejecución del programa esta nos arroja la imagen que habiamos preseleccionado cuyo son personas pero con 
